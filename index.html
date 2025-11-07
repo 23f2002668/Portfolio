@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahzada Moon | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff3cac; }
+      to { text-shadow: 0 0 20px #2b86c5; }
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #c7c7c7;
+      margin-top: 10px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      transition: 0.4s;
+    }
+
+    nav a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(229, 46, 113, 0.6);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about, .skills, .projects, .contact {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .about:hover, .skills:hover, .projects:hover, .contact:hover {
+      transform: translateY(-10px);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, #ff8a00, #e52e71);
+      border-radius: 15px;
+      padding: 15px;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .project h3 {
+      color: #ffb347;
+    }
+
+    .project p {
+      font-size: 0.9rem;
+      color: #d1d1d1;
+      margin: 10px 0;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .project a:hover {
+      box-shadow: 0 4px 12px rgba(229, 46, 113, 0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #c7c7c7;
+    }
+
+    footer a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shahzada Moon</h1>
+    <p>DevOps & Software Engineer | Data Science | Web Developer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate developer specialized in building scalable systems, web automation, and data analytics dashboards. Skilled in Flask, Redis, Docker, and front-end technologies, I enjoy merging data-driven insights with elegant web interfaces to create impactful solutions.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div>
+      <div class="skill">Flask</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">VueJS</div>
+      <div class="skill">Docker</div>
+      <div class="skill">Redis</div>
+      <div class="skill">Data Science</div>
+      <div class="skill">Excel Analytics</div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Smart Pharmacy Management</h3>
+        <p>Analyzed 42-day sales data to optimize inventory using ABC analysis, customer segmentation, and KPI dashboards.</p>
+        <a href="https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-for-Efficiency-Growth" target="_blank">View Project</a>
+      </div>
+
+      <div class="project">
+        <h3>QuizMaster V2</h3>
+        <p>Role-based quiz management app using Flask, SQLite, VueJS, and Redis for async reminders and performance tracking.</p>
+        <a href="https://github.com/23f2002668/QUIZMASTER" target="_blank">View Repo</a>
+      </div>
+
+      <div class="project">
+        <h3>Automation Agent – DataWorks Solutions</h3>
+        <p>Developed a Celery-Redis-based Flask automation system reducing manual reporting efforts by 70%.</p>
+        <a href="https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions" target="_blank">View Repo</a>
+      </div>
+
+      <div class="project">
+        <h3>MLP Project (Kaggle)</h3>
+        <p>ML competition to predict customer purchase value using MLP, achieving strong R² accuracy on test data.</p>
+        <a href="https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025" target="_blank">View Notebook</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:23f2002668@ds.study.iitm.ac.in">23f2002668@ds.study.iitm.ac.in</a></p>
+    <p>Phone: +91 81265 24809</p>
+    <p>GitHub: <a href="https://github.com/23f2002668" target="_blank">@23f2002668</a></p>
+    <p>Location: Muradnagar, Ghaziabad, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Shahzada Moon | Built with ❤️ using HTML & JavaScript</p>
+  </footer>
+</body>
+</html>
