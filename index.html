@@ -1,298 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shahzada Moon | Portfolio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* Floating Navbar */
-    nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 40px;
-      backdrop-filter: blur(12px);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 12px 25px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      z-index: 100;
-      transition: all 0.3s ease;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff8a00;
-    }
-
-    header {
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 3s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff3cac; }
-      to { text-shadow: 0 0 25px #2b86c5; }
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #c7c7c7;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .about, .skills, .projects, .contact {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s;
-    }
-
-    .about:hover, .skills:hover, .projects:hover, .contact:hover {
-      transform: translateY(-10px);
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .skill {
-      background: linear-gradient(135deg, #ff8a00, #e52e71);
-      border-radius: 15px;
-      padding: 15px;
-      color: #fff;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .project {
-      background: linear-gradient(135deg, #2b5876, #4e4376);
-      padding: 25px;
-      border-radius: 20px;
-      transition: transform 0.4s, box-shadow 0.4s;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .project::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(255,255,255,0.2), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-
-    .project:hover::before {
-      transform: translateX(100%);
-    }
-
-    .project:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-    }
-
-    .project h3 {
-      color: #ffb347;
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      color: #d1d1d1;
-      margin: 10px 0;
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #fff;
-      text-decoration: none;
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      padding: 8px 14px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .project a:hover {
-      box-shadow: 0 4px 12px rgba(229, 46, 113, 0.6);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #c7c7c7;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #00c6ff;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shahzada Moon — Portfolio</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+:root{--bg1:#0f1724;--bg2:#071028;--card:rgba(255,255,255,0.04);--muted:#9fb3c8;--accent1:#ff7a00;--accent2:#ff3cac}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Poppins,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg2),#071020);color:#eaf6ff}
+.container{max-width:1100px;margin:36px auto;padding:28px}
+/* Floating nav */
+.nav{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:rgba(10,14,20,0.5);backdrop-filter:blur(8px);padding:10px 18px;border-radius:999px;display:flex;gap:12px;z-index:60;border:1px solid rgba(255,255,255,0.03)}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:999px;font-weight:600;transition:all .22s}
+.nav a:hover{color:#fff;background:linear-gradient(90deg,var(--accent1),var(--accent2));transform:translateY(-4px);box-shadow:0 8px 30px rgba(255,122,0,0.12)}
+.header{display:flex;gap:20px;align-items:center}
+.avatar{width:140px;height:140px;border-radius:20px;overflow:hidden;flex:0 0 140px;border:3px solid rgba(255,255,255,0.04);background:linear-gradient(135deg,#0b1220,#061428);display:flex;align-items:center;justify-content:center}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .6s}
+.avatar:hover img{transform:scale(1.06) rotate(-1.5deg)}
+.hero{flex:1}
+.title{display:flex;align-items:flex-start;gap:12px}
+h1{font-size:28px;margin:0;background:linear-gradient(90deg,#fff,#cfe8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.roleline{color:var(--muted);margin-top:6px}
+.typing{color:#fff;font-weight:700}
+.badges{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.section-title{font-size:18px;margin-bottom:8px;color:#dff0ff}
+.about p{color:var(--muted)}
+.skills-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.skill{background:linear-gradient(135deg,#2b5876,#4e4376);padding:12px;border-radius:12px;color:#fff;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,0.45);transition:transform .25s}
+.skill:hover{transform:translateY(-6px) scale(1.03)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.project{position:relative;padding:18px;border-radius:12px;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,#0f1724, #11203a);border:1px solid rgba(255,255,255,0.03);transition:transform .35s,box-shadow .35s}
+.project:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(2,6,23,0.8)}
+.project .tag{display:inline-block;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#09111a;font-weight:700;font-size:12px}
+.project h3{margin:10px 0 6px;color:#ffd6a5}
+.project p{color:var(--muted);font-size:14px}
+.project a{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#07101a;text-decoration:none;font-weight:700}
+.contact-list li{color:var(--muted);margin-bottom:8px}
+.footer{margin-top:18px;text-align:center;color:var(--muted)}
+.hero-deco{position:fixed;right:6vw;top:12vh;width:420px;height:420px;filter:blur(70px);opacity:0.12;pointer-events:none;background:conic-gradient(from 200deg,#ff7a00,#ff3cac,#7b61ff)}
+@media(max-width:980px){.grid{grid-template-columns:1fr}.nav{left:16px;right:16px;transform:none;width:auto}}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header>
-    <h1>Shahzada Moon</h1>
-    <p>DevOps & Software Engineer | Data Science | Web Developer</p>
+<div class="hero-deco" aria-hidden></div>
+<nav class="nav">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+<div class="container">
+  <header class="header">
+    <div class="avatar card">
+      <img src="/assets/profile.jpg" alt="Shahzada Moon" id="profileImg" onerror="this.src='https://avatars.githubusercontent.com/23f2002668'"/>
+    </div>
+    <div class="hero">
+      <div class="title">
+        <div>
+          <h1>Shahzada Moon</h1>
+          <div class="roleline"> <span class="typing" id="typing"></span></div>
+          <div class="badges">
+            <span class="badge">B.S. Data Science — IIT Madras</span>
+            <span class="badge">Roll: 23f2002668</span>
+            <span class="badge">Open to collaborations</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:12px;color:var(--muted)">Developer, data scientist and systems engineer — I build dashboards, automation, and backend systems that scale.</p>
+    </div>
   </header>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate developer specialized in building scalable systems, web automation, and data analytics dashboards. Skilled in Flask, Redis, Docker, and front-end technologies, I enjoy merging data-driven insights with elegant web interfaces to create impactful solutions.</p>
-  </section>
+  <main class="grid">
+    <section class="card about" id="about">
+      <div class="section-title">About</div>
+      <h2 style="margin-top:0">Who I am</h2>
+      <p>I'm a 22-year-old developer focused on backend systems, DevOps, and data analytics. I design ETL pipelines, build Flask apps with Celery + Redis, create dashboards, and automate workflows for efficiency.</p>
+      <p style="margin-top:12px;color:var(--muted)"><strong>Highlights:</strong> Attendance & activity manager, Smart Pharmacy capstone, QuizMaster V2, MLP Kaggle notebook, automation agents, and multiple scraping/utility tools.</p>
+    </section>
 
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">Python</div>
-      <div class="skill">Flask</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">VueJS</div>
-      <div class="skill">Docker</div>
-      <div class="skill">Redis</div>
-      <div class="skill">Data Science</div>
-      <div class="skill">Excel Analytics</div>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project">
-        <h3>Smart Pharmacy Management</h3>
-        <p>Analyzed 42-day sales data to optimize inventory using ABC analysis, customer segmentation, and KPI dashboards.</p>
-        <a href="https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-for-Efficiency-Growth" target="_blank">View Project</a>
+    <aside class="card">
+      <div class="section-title">Contact</div>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:23f2002668@ds.study.iitm.ac.in">23f2002668@ds.study.iitm.ac.in</a></li>
+        <li>Phone: +91 81265 24809</li>
+        <li>GitHub: <a href="https://github.com/23f2002668" target="_blank">@23f2002668</a></li>
+        <li>Location: Muradnagar, Ghaziabad, India</li>
+      </ul>
+      <div style="margin-top:14px">
+        <div class="section-title">Education</div>
+        <p style="color:var(--muted);margin-top:8px">B.S. Data Science — IIT Madras</p>
+        <p style="color:var(--muted);margin-top:6px">B.Tech (CSE) — R.D. Engineering College</p>
       </div>
+    </aside>
 
-      <div class="project">
-        <h3>QuizMaster V2</h3>
-        <p>Role-based quiz management app using Flask, SQLite, VueJS, and Redis for async reminders and performance tracking.</p>
-        <a href="https://github.com/23f2002668/QUIZMASTER" target="_blank">View Repo</a>
+    <section class="card" id="skills">
+      <div class="section-title">Skills</div>
+      <h2 style="margin-top:0">Technical Skills</h2>
+      <div class="skills-list">
+        <div class="skill">Operating Systems: MacOS, LINUX, Windows</div>
+        <div class="skill">DevOps & Tools: Git, GitHub, Linux Admin, Docker, Podman, CI/CD</div>
+        <div class="skill">Automation: Celery, Redis, Cron, Background Jobs</div>
+        <div class="skill">Programming: Python, Shell, C, Java, SQL</div>
+        <div class="skill">Web: HTML, CSS, JavaScript, VueJS, Flask, FastAPI</div>
+        <div class="skill">Databases: MySQL, SQLite, PostgreSQL</div>
+        <div class="skill">Data Science: Pandas, NumPy, scikit-learn, Matplotlib</div>
+        <div class="skill">ETL & Reporting: Excel, OpenRefine, ReportLab</div>
+        <div class="skill">Media & Tools: ffmpeg, yt-dlp, web scraping (BeautifulSoup)</div>
+        <div class="skill">Other: BlockChain basics, Data Structures & Algorithms</div>
       </div>
+    </section>
 
-      <div class="project">
-        <h3>Automation Agent – DataWorks Solutions</h3>
-        <p>Developed a Celery-Redis-based Flask automation system reducing manual reporting efforts by 70%.</p>
-        <a href="https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions" target="_blank">View Repo</a>
+    <section class="card" id="projects">
+      <div class="section-title">Projects</div>
+      <h2 style="margin-top:0">Selected Projects</h2>
+      <div class="projects-grid">
+        <!-- Automation Agent -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions','_blank')">
+          <div class="tag">Automation</div>
+          <h3>Automation Agent – DataWorks Solutions</h3>
+          <p>Flask-based automation platform executing 15+ background tasks (reports, scraping, data pipelines). Integrated Celery + Redis and containerized for CI/CD deployment.</p>
+          <a href="https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions" target="_blank">View Repo</a>
+        </article>
+
+        <!-- Attendance Master -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Attendance-Master-Extra-Curriculum-Activity-Manager','_blank')">
+          <div class="tag">Edu-Tech</div>
+          <h3>Attendance Master & Extra-Curriculum Activity Manager</h3>
+          <p>Student attendance tracking and activity monitoring system with automated daily reminders and monthly reports using Celery; admin dashboards for trends and exports.</p>
+          <a href="https://github.com/23f2002668/Attendance-Master-Extra-Curriculum-Activity-Manager" target="_blank">View Repo</a>
+        </article>
+
+        <!-- QuizMaster -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/QUIZMASTER','_blank')">
+          <div class="tag">EdTech</div>
+          <h3>QuizMaster (Python + Flask + Vue.js)</h3>
+          <p>Role-based quiz management system with timed quizzes, result export, and async notifications via Celery. Frontend built with VueJS and Bootstrap.</p>
+          <a href="https://github.com/23f2002668/QUIZMASTER" target="_blank">View Repo</a>
+        </article>
+
+        <!-- A-Z Household -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/A-Z-HOUSEHOLD-SERVICE-WEB-APPLICATION','_blank')">
+          <div class="tag">Web App</div>
+          <h3>A-Z Household Service Web App</h3>
+          <p>Full-stack platform to book household services with provider listings, booking engine, and admin management—built with Flask and a responsive frontend.</p>
+          <a href="https://github.com/23f2002668/A-Z-HOUSEHOLD-SERVICE-WEB-APPLICATION" target="_blank">View Repo</a>
+        </article>
+
+        <!-- Online Video Downloader -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Online_Video_Downloader','_blank')">
+          <div class="tag">Utilities</div>
+          <h3>Online Video Downloader (yt-dlp)</h3>
+          <p>Python script wrapping yt-dlp with proxy support and format selection for automated downloads and batch processing.</p>
+          <a href="https://github.com/23f2002668/Online_Video_Downloader" target="_blank">View Repo</a>
+        </article>
+
+        <!-- Proxy Scraper -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Proxy_Scraper_-BeautifulSoup','_blank')">
+          <div class="tag">Scraping</div>
+          <h3>Proxy Scraper (BeautifulSoup)</h3>
+          <p>Scrapes public proxy lists and validates proxies to build a rotating proxy pool for automation tasks.</p>
+          <a href="https://github.com/23f2002668/Proxy_Scraper_-BeautifulSoup" target="_blank">View Repo</a>
+        </article>
+
+        <!-- Image Downloader -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Image_Downloader_-BeautifulSoup_Web_Scraper','_blank')">
+          <div class="tag">Scraping</div>
+          <h3>Image Downloader (BeautifulSoup)</h3>
+          <p>Web scraper to bulk-download images with filters for file type and resolution; supports proxies and batching.</p>
+          <a href="https://github.com/23f2002668/Image_Downloader_-BeautifulSoup_Web_Scraper" target="_blank">View Repo</a>
+        </article>
+
+        <!-- MLP Kaggle -->
+        <article class="project" onclick="window.open('https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025','_blank')">
+          <div class="tag">ML</div>
+          <h3>ML & DS Project – MLP Project T22025 (Kaggle)</h3>
+          <p>Kaggle competition entry predicting customer purchase value. Preprocessed 100k+ sessions and built MLP models evaluated with R² metric.</p>
+          <a href="https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025" target="_blank">View Notebook</a>
+        </article>
+
+        <!-- Smart Pharmacy -->
+        <article class="project" onclick="window.open('https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth','_blank')">
+          <div class="tag">Analytics</div>
+          <h3>Smart Pharmacy Management</h3>
+          <p>Capstone project: 42-day sales & customer analysis, ABC inventory optimisation, and SMART recommendations with an Excel/Flask dashboard prototype.</p>
+          <a href="https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth" target="_blank">View Report</a>
+        </article>
+
       </div>
+    </section>
 
-      <div class="project">
-        <h3>MLP Project (Kaggle)</h3>
-        <p>ML competition to predict customer purchase value using MLP, achieving strong R² accuracy on test data.</p>
-        <a href="https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025" target="_blank">View Notebook</a>
-      </div>
-    </div>
-  </section>
+    <section class="card" id="contact">
+      <div class="section-title">Get in touch</div>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:23f2002668@ds.study.iitm.ac.in">23f2002668@ds.study.iitm.ac.in</a></li>
+        <li>Phone: +91 81265 24809</li>
+        <li>GitHub: <a href="https://github.com/23f2002668" target="_blank">@23f2002668</a></li>
+      </ul>
+    </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:23f2002668@ds.study.iitm.ac.in">23f2002668@ds.study.iitm.ac.in</a></p>
-    <p>Phone: +91 81265 24809</p>
-    <p>GitHub: <a href="https://github.com/23f2002668" target="_blank">@23f2002668</a></p>
-    <p>Location: Muradnagar, Ghaziabad, India</p>
-  </section>
+  </main>
 
-  <footer>
-    <p>© 2025 Shahzada Moon | Built with ❤️ using HTML, CSS & JS</p>
-  </footer>
+  <div class="footer">© 2025 Shahzada Moon · Built with HTML, CSS & JS</div>
+</div>
 
-  <script>
-    // Scroll animation
-    const sections = document.querySelectorAll('section');
-    const reveal = () => {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < trigger) sec.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
-  </script>
+<script>
+// Dynamic typing text
+const roles = [
+  'DevOps Engineer',
+  'Flask & Backend Developer',
+  'Data Scientist',
+  'Full-Stack Web Developer',
+  'Automation Engineer'
+];
+let i=0,j=0;const el=document.getElementById('typing');
+function type(){
+  if(!el) return;
+  const word = roles[i];
+  el.textContent = word.slice(0,j);
+  j++;
+  if(j>word.length){
+    setTimeout(()=>{j=0;i=(i+1)%roles.length;type();},1000);
+    return;
+  }
+  setTimeout(type,80);
+}
+setTimeout(type,500);
+
+// Scroll reveal
+const secs = document.querySelectorAll('.card');
+function reveal(){
+  const trigger = window.innerHeight*0.85;
+  secs.forEach(s=>{const t=s.getBoundingClientRect().top;if(t < trigger) s.classList.add('visible');});
+}
+window.addEventListener('scroll',reveal);reveal();
+
+// Profile image float animation
+const img = document.getElementById('profileImg');
+let angle=0;setInterval(()=>{angle=(angle+0.6)%360; if(img) img.style.transform=`rotate(${Math.sin(angle/20)}deg) scale(1.02)`},80);
+</script>
 </body>
 </html>
