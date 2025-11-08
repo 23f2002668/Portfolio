@@ -7,101 +7,112 @@
 <meta name="description" content="Shahzada Moon — DevOps, Backend & Data Science | Portfolio" />
 <link rel="icon" href="https://avatars.githubusercontent.com/23f2002668">
 <style>
-  /* ---------- Fonts & reset ---------- */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(135deg,#0b1020 0%,#231142 45%,#0d3b6a 100%);color:#eaf6ff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit}
-  /* ---------- layout ---------- */
-  .page { min-height:100%; padding-bottom:80px; }
-  .container { max-width:1120px; margin:46px auto; padding:28px; position:relative; }
-  .hero-deco { position:fixed; right:6vw; top:12vh; width:420px; height:420px; filter:blur(70px); opacity:0.12; pointer-events:none; background:conic-gradient(from 200deg,#ff7a00,#ff3cac,#7b61ff); z-index:0; }
+/* ---------- Fonts & Reset ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;background:
+  radial-gradient(800px 400px at 10% 15%, rgba(107,56,255,0.10), transparent),
+  linear-gradient(135deg,#08102a 0%, #231142 55%, #0b3260 100%);
+color:#eaf6ff; -webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 
-  /* ---------- floating navbar ---------- */
-  nav.nav {
-    position:fixed; left:50%; transform:translateX(-50%); top:18px;
-    display:flex; gap:12px; padding:10px 18px; border-radius:999px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.04); backdrop-filter: blur(8px); z-index:220;
-    box-shadow:0 10px 30px rgba(2,6,23,0.7)
-  }
-  nav.nav a{font-weight:600;padding:8px 12px;border-radius:999px;text-decoration:none;color:#cfe9ff;transition:all .2s}
-  nav.nav a:hover{background:linear-gradient(90deg,#ff7a00,#ff3cac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;transform:translateY(-4px)}
+/* ---------- Page Layout ---------- */
+.page { min-height:100%; padding-bottom:80px; }
+.container { max-width:1150px; margin:46px auto; padding:28px; position:relative; z-index:2; }
 
-  /* ---------- header ---------- */
-  header.header { display:flex; gap:20px; align-items:center; z-index:10; position:relative; margin-top:84px; }
-  .avatar { width:140px; height:140px; border-radius:18px; overflow:hidden; border:2px solid rgba(255,255,255,0.06); background:linear-gradient(180deg,#08122a,#071028); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(2,6,23,0.6) }
-  .avatar img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}
-  .avatar:hover img{transform:scale(1.06) rotate(-2deg)}
-  .hero { flex:1 }
-  h1.name { font-size:30px; margin-bottom:6px; background: linear-gradient(90deg,#ffd07a,#ff7a00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-  .subtitle { color:#cfe8ff; margin-bottom:10px; font-weight:600 }
-  .intro { color:#bcd7ee; max-width:820px; line-height:1.55; margin-top:8px }
+/* ---------- Floating Nav ---------- */
+nav.nav {
+  position:fixed; left:50%; transform:translateX(-50%); top:18px;
+  display:flex; gap:12px; padding:10px 18px; border-radius:999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04); backdrop-filter: blur(8px); z-index:220;
+  box-shadow:0 10px 30px rgba(2,6,23,0.7)
+}
+nav.nav a{font-weight:600;padding:8px 12px;border-radius:999px;color:#cfe9ff;transition:all .18s}
+nav.nav a:hover{background:linear-gradient(90deg,#ff7a00,#ff3cac);-webkit-background-clip:text;-webkit-text-fill-color:transparent;transform:translateY(-4px)}
 
-  /* ---------- badges ---------- */
-  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px }
-  .badge { padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.03); color:#d6eefc; border:1px solid rgba(255,255,255,0.03); font-weight:600; font-size:13px }
+/* ---------- Header ---------- */
+.header{display:flex;gap:20px;align-items:center;margin-top:84px}
+.avatar{width:140px;height:140px;border-radius:18px;overflow:hidden;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,#071028,#0b1220);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+.avatar img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.avatar:hover img{transform:scale(1.06) rotate(-2deg)}
+.hero{flex:1}
+h1.name{font-size:30px;margin-bottom:6px;background:linear-gradient(90deg,#ffd07a,#ff7a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:#cfe8ff;margin-bottom:8px;font-weight:600}
+.intro{color:#bcd7ee;line-height:1.55;margin-top:8px}
 
-  /* ---------- grid ---------- */
-  .grid { display:grid; grid-template-columns:1fr 360px; gap:22px; margin-top:22px; align-items:start }
-  @media (max-width:980px) { .grid { grid-template-columns:1fr } .avatar{width:110px;height:110px} header.header{flex-direction:row;align-items:center} nav.nav{left:12px;transform:none;right:12px} }
+/* ---------- Badges ---------- */
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:#d6eefc;border:1px solid rgba(255,255,255,0.03);font-weight:600;font-size:13px}
 
-  /* ---------- cards ---------- */
-  .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,0.03); box-shadow: 0 8px 30px rgba(2,6,23,0.65); }
-  .section-title { font-size:15px; color:#dff4ff; font-weight:700; margin-bottom:10px }
+/* ---------- Grid ---------- */
+.grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
+@media (max-width:980px){.grid{grid-template-columns:1fr}.avatar{width:110px;height:110px}nav.nav{left:12px;transform:none;right:12px}}
 
-  /* ---------- Skills (cards grid) ---------- */
-  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px }
-  .skill-card { background: linear-gradient(135deg,#13203a, #1b2a4a); padding:14px; border-radius:12px; position:relative; overflow:hidden; transition:transform .28s, box-shadow .28s; border:1px solid rgba(255,255,255,0.03) }
-  .skill-card:hover { transform:translateY(-8px); box-shadow:0 18px 40px rgba(3,12,30,0.6) }
-  .skill-title { font-size:16px; color:#ffdca8; font-weight:700; margin-bottom:8px }
-  .skill-desc { color:#bcd7ee; font-size:13px; min-height:42px }
-  .skill-card button { margin-top:10px; background:linear-gradient(90deg,#ff7a00,#ff3cac); border:none; padding:8px 12px; border-radius:8px; color:#08121a; font-weight:700; cursor:pointer; transition:transform .18s }
-  .skill-card button:hover { transform:scale(1.03) }
+/* ---------- Cards ---------- */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.65)}
+.section-title{font-size:15px;color:#dff4ff;font-weight:700;margin-bottom:10px}
 
-  /* ---------- Projects ---------- */
-  .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:12px }
-  .project-card { background:linear-gradient(135deg,#0f1724,#11203a); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03); transition:transform .28s, box-shadow .28s; cursor:default; overflow:hidden }
-  .project-card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(3,12,30,0.6) }
-  .project-tag { display:inline-block; padding:6px 8px; border-radius:8px; background:linear-gradient(90deg,#ff7a00,#ff3cac); color:#051018; font-weight:800; font-size:12px }
-  .project-title { color:#ffd27f; font-size:16px; font-weight:700; margin-top:8px }
-  .project-excerpt { color:#bcd7ee; font-size:13px; margin-top:8px; min-height:46px }
-  .project-card .view-btn { margin-top:12px; background:linear-gradient(90deg,#6dd3ff,#4a8bff); border:none; padding:8px 12px; color:#041026; font-weight:700; border-radius:8px; cursor:pointer }
+/* ---------- Skills Grid ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+.skill-card{background:linear-gradient(135deg,#13203a,#1b2a4a);padding:14px;border-radius:12px;position:relative;overflow:hidden;transition:transform .28s,box-shadow .28s;border:1px solid rgba(255,255,255,0.03)}
+.skill-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(3,12,30,0.6)}
+.skill-title{font-size:16px;color:#ffdca8;font-weight:700;margin-bottom:8px}
+.skill-desc{color:#bcd7ee;font-size:13px;min-height:48px}
+.skill-card button{margin-top:10px;background:linear-gradient(90deg,#ff7a00,#ff3cac);border:none;padding:8px 12px;border-radius:8px;color:#08121a;font-weight:800;cursor:pointer}
+.skill-card button:hover{transform:scale(1.03)}
 
-  /* ---------- modal (shared) ---------- */
-  .modal { display:none; position:fixed; inset:0; background:rgba(2,6,23,0.8); z-index:300; justify-content:center; align-items:center; padding:20px }
-  .modal.show { display:flex }
-  .modal-panel { width:100%; max-width:760px; background:linear-gradient(180deg,#071028,#0b1630); border-radius:12px; padding:22px; border:1px solid rgba(255,255,255,0.04); box-shadow:0 30px 80px rgba(2,6,23,0.7); color:#eaf6ff; transform:translateY(10px); animation:panelIn .22s ease forwards }
-  @keyframes panelIn { from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:translateY(0)} }
-  .modal h3{ color:#ffd27f; margin-bottom:10px }
-  .modal ul { color:#cfe8ff; margin-left:18px; margin-top:8px; }
-  .modal .meta { color:#9ecbff; font-weight:600; margin-top:10px }
-  .modal .close { margin-top:16px; background:transparent; border:1px solid rgba(255,255,255,0.08); padding:8px 12px; color:#fff; border-radius:8px; cursor:pointer }
-  .modal .close:hover { background:linear-gradient(90deg,#ff7a00,#ff3cac); border:none; color:#08121a }
+/* ---------- Workshops & Certifications ---------- */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:12px}
+.cert-card{background:linear-gradient(135deg,#0f1a36,#112044);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .25s}
+.cert-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(3,12,30,0.6)}
+.cert-title{color:#ffd27f;font-weight:700;margin-bottom:6px}
+.cert-meta{color:#bcd7ee;font-size:13px}
 
-  /* ---------- right column (contact / edu) ---------- */
-  .right-col .section-title{ margin-bottom:10px }
-  .contact-list li{ color:#bcd7ee; margin-bottom:8px; list-style:none }
-  .edu { color:#bcd7ee; margin-top:8px }
+/* ---------- Projects Grid ---------- */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+.project-card{background:linear-gradient(135deg,#0f1724,#11203a);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .28s,box-shadow .28s}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(3,12,30,0.6)}
+.project-tag{display:inline-block;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,#ff7a00,#ff3cac);color:#051018;font-weight:800;font-size:12px}
+.project-title{color:#ffd27f;font-size:16px;font-weight:700;margin-top:8px}
+.project-excerpt{color:#bcd7ee;font-size:13px;margin-top:8px;min-height:46px}
+.project-card .view-btn{margin-top:12px;background:linear-gradient(90deg,#6dd3ff,#4a8bff);border:none;padding:8px 12px;color:#041026;font-weight:700;border-radius:8px;cursor:pointer}
 
-  footer { margin-top:30px; text-align:center; color:#b6d6f9; font-size:14px }
+/* ---------- Modal (shared) ---------- */
+.modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.85);z-index:400;justify-content:center;align-items:center;padding:20px}
+.modal.show{display:flex}
+.modal-panel{width:100%;max-width:900px;background:linear-gradient(180deg,#071028,#0b1630);border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(2,6,23,0.75);color:#eaf6ff;max-height:80vh;overflow:auto}
+.modal-panel h3{color:#ffd27f;margin-bottom:10px}
+.modal-panel .meta{color:#9ecbff;font-weight:600;margin-top:8px}
+.modal-panel ul{margin-top:10px;color:#cfe8ff;line-height:1.5;margin-left:18px}
+.modal-panel .close{margin-top:12px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;color:#fff;border-radius:8px;cursor:pointer}
+.modal-panel .close:hover{background:linear-gradient(90deg,#ff7a00,#ff3cac);border:none;color:#08121a}
+
+/* ---------- Right column ---------- */
+.right-col .section-title{margin-bottom:10px}
+.contact-list li{color:#bcd7ee;margin-bottom:8px;list-style:none}
+.edu{color:#bcd7ee;margin-top:8px}
+
+/* ---------- Footer ---------- */
+footer{margin-top:30px;text-align:center;color:#b6d6f9;font-size:14px;padding-bottom:28px}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="hero-deco" aria-hidden="true"></div>
+  <div class="hero-deco" aria-hidden="true" style="position:fixed;right:6vw;top:12vh;width:420px;height:420px;filter:blur(70px);opacity:0.12;pointer-events:none;background:conic-gradient(from 200deg,#ff7a00,#ff3cac,#7b61ff);"></div>
 
-  <nav class="nav" role="navigation" aria-label="Main">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#certs">Certifications</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
-    <!-- header -->
+    <!-- Header -->
     <header class="header" role="banner">
-      <div class="avatar card">
+      <div class="avatar card" aria-hidden>
         <img id="profileImg" src="/assets/profile.jpg" alt="Shahzada Moon" onerror="this.src='https://avatars.githubusercontent.com/23f2002668'">
       </div>
       <div class="hero">
@@ -112,45 +123,45 @@
           <span class="badge">Roll: 23f2002668</span>
           <span class="badge">Open to collaborations</span>
         </div>
-        <p class="intro">I build scalable backend systems, automation and analytics dashboards. I work with Flask, Celery & Redis, containerize with Docker, and create frontends with VueJS and Bootstrap.</p>
-        <div style="margin-top:10px"><strong style="color:#bcd7ee">Role:</strong> <span id="typing" style="color:#8fd6ff; font-weight:700; margin-left:8px"></span></div>
+        <p class="intro">I build scalable backend systems, automation, and analytics dashboards. I work with Flask, Celery & Redis, containerize with Docker/Podman, and build modern frontends with VueJS and Bootstrap.</p>
+        <div style="margin-top:10px"><strong style="color:#bcd7ee">Role:</strong> <span id="typing" style="color:#8fd6ff;font-weight:700;margin-left:8px"></span></div>
       </div>
     </header>
 
     <main class="grid" role="main">
-      <!-- left column -->
+      <!-- Left column -->
       <div>
-        <!-- ABOUT (small card duplicate for search bots) -->
+        <!-- About -->
         <section id="about" class="card" aria-labelledby="aboutHeading">
           <div class="section-title" id="aboutHeading">About</div>
           <h2 style="margin-top:0">Who I am</h2>
-          <p style="color:#bcd7ee; margin-top:8px; line-height:1.55">I’m a 22-year-old developer focused on backend systems, DevOps and data analytics. I design ETL pipelines, build Flask apps with Celery + Redis, create dashboards and automate workflows to reduce manual effort.</p>
-          <p style="color:#9ecbff; margin-top:10px; font-weight:600">Highlights: Attendance & activity manager, Smart Pharmacy capstone, QuizMaster V2, MLP Kaggle notebook, automation agents, and various scraping/utility tools.</p>
+          <p style="color:#bcd7ee;margin-top:8px;line-height:1.55">I’m a 22-year-old developer focused on backend systems, DevOps and data analytics. I design ETL pipelines, build Flask apps with Celery + Redis, create dashboards and automate workflows to reduce manual effort and improve business outcomes.</p>
+          <p style="color:#9ecbff;margin-top:10px;font-weight:600">Highlights: Attendance manager, Smart Pharmacy capstone, QuizMaster V2, MLP Kaggle notebook, automation agents, and scraping/utility tools.</p>
         </section>
 
-        <!-- SKILLS -->
+        <!-- Skills -->
         <section id="skills" class="card" aria-labelledby="skillsHeading" style="margin-top:18px">
           <div class="section-title" id="skillsHeading">Skills</div>
           <h2 style="margin-top:0">Technical Skills (click View Details)</h2>
-
-          <div class="skills-grid" id="skillsGrid">
-            <!-- JS will populate skill cards here -->
-          </div>
+          <div id="skillsGrid" class="skills-grid" aria-live="polite"></div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- Certifications -->
+        <section id="certs" class="card" aria-labelledby="certsHeading" style="margin-top:18px">
+          <div class="section-title" id="certsHeading">Workshops & Certifications</div>
+          <h2 style="margin-top:0">Workshops & Certificates</h2>
+          <div id="certGrid" class="cert-grid"></div>
+        </section>
+
+        <!-- Projects -->
         <section id="projects" class="card" aria-labelledby="projectsHeading" style="margin-top:18px">
-          <div class="section-title" id="projectsHeading">Projects</div>
+          <div class="section-title" id="projectsHeading">Projects & Experience</div>
           <h2 style="margin-top:0">Selected Projects</h2>
-
-          <div class="projects-grid" id="projectsGrid">
-            <!-- JS will populate project cards here -->
-          </div>
+          <div id="projectsGrid" class="projects-grid"></div>
         </section>
-
       </div>
 
-      <!-- right column -->
+      <!-- Right column -->
       <aside class="right-col">
         <div class="card">
           <div class="section-title">Contact</div>
@@ -170,276 +181,236 @@
       </aside>
     </main>
 
-    <div style="margin-top:18px; text-align:center;">
-      <footer>© 2025 Shahzada Moon · Built with HTML, CSS & JS</footer>
+    <div style="margin-top:18px;text-align:center">
+      <footer>© 2025 Shahzada Moon · Built with ❤️ HTML · CSS · JS</footer>
     </div>
   </div>
 
-  <!-- MODAL (shared for skills & projects) -->
+  <!-- Modal (shared for skills & projects) -->
   <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-panel" role="document" id="modalPanel">
-      <!-- populated by JS -->
-    </div>
+    <div class="modal-panel" role="document" id="modalPanel"></div>
   </div>
 </div>
 
 <script>
-/* ========== typing animation ========== */
-const roles = ["DevOps Engineer","Flask & Backend Developer","Data Scientist","Full-Stack Web Developer","Automation Engineer"];
+/* ========== Typing animation ========== */
+const roles = ["DevOps Engineer","Flask & Backend Developer","Data Scientist","Full-Stack Web Developer","AI / Automation Engineer"];
 let ri = 0, ci = 0;
 const elTyping = document.getElementById('typing');
 function typingStep(){
   const cur = roles[ri];
+  if(!elTyping) return;
   elTyping.textContent = cur.slice(0, ci);
   ci++;
   if(ci > cur.length){ setTimeout(()=>{ ci=0; ri=(ri+1)%roles.length; typingStep(); }, 1100); return; }
-  setTimeout(typingStep, 80);
+  setTimeout(typingStep, 70);
 }
 typingStep();
 
-/* ========== skill details (extracted from resume) ========== */
+/* ========== Skills data (full from resume) ========== */
 const skills = [
   {
-    id: "python",
-    title: "Python",
-    short: "Scripting, backend, data processing & automation",
-    details: [
-      "Libraries: Pandas, NumPy, Matplotlib, scikit-learn, requests.",
-      "Web: Flask, FastAPI—building RESTful APIs and microservices.",
-      "Scripting: automation scripts, ETL pipelines, file handling, OOP, decorators.",
-      "Testing & tooling: virtualenv, pip, packaging, basic unit tests."
+    id:"os",
+    title:"Operating Systems",
+    short:"macOS · LINUX · Windows",
+    details:[
+      "Daily work on macOS and Linux; Windows familiarity.",
+      "System administration basics: package management, user & permissions, process monitoring.",
+      "Shell scripting for automation and cron jobs."
     ]
   },
   {
-    id: "flask",
-    title: "Flask",
-    short: "Backend frameworks & microservices",
-    details: [
-      "Built REST APIs, server-rendered pages, and prototype dashboards.",
-      "Integrated with Celery for background jobs and Redis for caching.",
-      "Template usage for prototyping; designed endpoints for quiz & attendance apps.",
-      "Deployed locally and prepared for container-based deployments."
+    id:"devops-tools",
+    title:"DevOps & Tools",
+    short:"Git · GitHub · Linux Sys Admin · Jupyter · OpenRefine · Docker · Podman · Redis · Celery",
+    details:[
+      "Version control: Git & GitHub workflows, PRs, and branching strategies.",
+      "Linux system administration (ongoing): services, logs, cron, monitoring.",
+      "Containerization: Docker & Podman, Dockerfiles, docker-compose.",
+      "Background jobs & queues: Celery + Redis as broker/backend for async tasks.",
+      "Data tooling: Jupyter Notebook, OpenRefine for cleaning, API integration basics."
     ]
   },
   {
-    id: "redis",
-    title: "Redis",
-    short: "Caching, session store & message broker",
-    details: [
-      "Used as a cache to speed application reads and reduce DB hits.",
-      "Employed as Celery broker/backend for background job orchestration.",
-      "Session storage and ephemeral data store in web apps."
+    id:"prog",
+    title:"Programming Languages & Frameworks",
+    short:"Shell Scripting · SED · AWK · Python · C · Java · SQL · Markdown · JSON · CSV",
+    details:[
+      "Shell tooling: bash, sed, awk for text processing and automation.",
+      "Python: scripting, OOP, modules, packaging, virtualenv.",
+      "C & Java basics for algorithmic and systems tasks.",
+      "Data interchange: JSON, CSV, and Markdown for documentation."
     ]
   },
   {
-    id: "celery",
-    title: "Celery",
-    short: "Background tasks, scheduled jobs & workers",
-    details: [
-      "Scheduled daily reminders, monthly report generation for apps.",
-      "Implemented long-running tasks like exports and scraping pipelines.",
-      "Monitored and tuned worker concurrency and retry policies."
+    id:"web",
+    title:"Web Development",
+    short:"HTML · CSS · JavaScript · VueJS · FastAPI · Flask · REST API",
+    details:[
+      "Frontend: HTML/CSS/JS and component-driven VueJS interfaces.",
+      "Backend: Flask & FastAPI for RESTful endpoints and microservices.",
+      "Built responsive UIs with Bootstrap and integrated frontends with APIs."
     ]
   },
   {
-    id: "docker",
-    title: "Docker",
-    short: "Containerization & reproducible environments",
-    details: [
-      "Containerized Flask apps, Celery workers, and supporting services.",
-      "Wrote Dockerfiles and docker-compose for local orchestration.",
-      "Prepared applications for CI/CD and simple cloud deploys."
+    id:"ds-ml-ai",
+    title:"Data Science, Machine Learning & AI",
+    short:"Data Science · ML · AI · LLM · Prompt Engineering · scikit-learn · Pandas · NumPy · Matplotlib · Seaborn",
+    details:[
+      "Exploratory Data Analysis, feature engineering, and visualisations (Pandas, Matplotlib, Seaborn).",
+      "Modeling: scikit-learn for baseline models, MLPs for deeper models.",
+      "Familiarity with LLM concepts and prompt engineering techniques."
     ]
   },
   {
-    id: "vuejs",
-    title: "VueJS",
-    short: "Frontend interactive UIs",
-    details: [
-      "Built dynamic frontends for quiz systems and dashboards.",
-      "Component-driven architecture and integration with REST APIs.",
-      "Used Bootstrap for responsive UI styling and forms."
+    id:"google",
+    title:"Google Workspace & Tools",
+    short:"Sheets · Charts · Colaboratory · Docs · Forms · Slides · Calendar · Meet · Drive · Gmail",
+    details:[
+      "Sheets & Charts for quick analytics and shared reports.",
+      "Google Colab for collaborative experimentation and notebooks.",
+      "Drive integration and document workflows (Forms, Docs, Slides)."
     ]
   },
   {
-    id: "sqlite",
-    title: "SQLite",
-    short: "Lightweight embedded database",
-    details: [
-      "Used as the required project DB for QuizMaster / local prototypes.",
-      "Schema design, querying, and exports to CSV for reporting.",
-      "Suitable for small deployments and demo builds."
+    id:"ms-office",
+    title:"Microsoft Office",
+    short:"Word · Excel · PowerPoint",
+    details:[
+      "Excel for prototyping analytics (pivot tables, charts) and reporting.",
+      "PowerPoint & Word for academic and project documentation."
     ]
   },
   {
-    id: "mysql",
-    title: "MySQL / PostgreSQL",
-    short: "Production-grade relational databases",
-    details: [
-      "Schema design, indexing, and query optimization basics.",
-      "Connections from Flask apps, migrations, and backups.",
-      "Used MySQL for transactional needs and PostgreSQL for advanced features."
+    id:"db",
+    title:"Database & SQL",
+    short:"MySQL · SQLite · PostgreSQL",
+    details:[
+      "Database schema design, querying, joins, and exports.",
+      "SQLite for prototypes, MySQL / PostgreSQL for production-like setups."
     ]
   },
   {
-    id: "htmlcssjs",
-    title: "HTML / CSS / JavaScript",
-    short: "Frontend fundamentals & responsive layouts",
-    details: [
-      "Built static dashboards, responsive layouts with Bootstrap.",
-      "Vanilla JS interactivity, DOM manipulation and Fetch API.",
-      "Optimized assets, and created static pages for GitHub Pages."
+    id:"dsa",
+    title:"Data Structures & Algorithms",
+    short:"Core algorithms & optimization",
+    details:[
+      "Fundamental DS&A concepts: arrays, linked lists, trees, graphs.",
+      "Algorithms: sorting, searching, dynamic programming and complexity analysis."
     ]
   },
   {
-    id: "datascience",
-    title: "Data Science",
-    short: "Exploratory analysis & modelling",
-    details: [
-      "Exploratory Data Analysis, feature engineering, and visualizations.",
-      "Libraries: Pandas, scikit-learn, NumPy; tools: Excel for prototyping.",
-      "Built predictive models (MLP) and evaluated with R² and other metrics."
+    id:"blockchain",
+    title:"Blockchain",
+    short:"Fundamentals & applications",
+    details:[
+      "Basic understanding of blockchain concepts and potential applications.",
+      "Explored blockchain-related coursework and certificate from NPTEL."
     ]
   },
   {
-    id: "linux",
-    title: "Linux",
-    short: "System administration & shell scripting",
-    details: [
-      "Daily work on macOS and Linux; shell scripting and process monitoring.",
-      "Package management, cron jobs, and system troubleshooting.",
-      "Permission handling, logs, and basic security practices."
+    id:"tools-platforms",
+    title:"Tools & Platforms",
+    short:"VS Code · GitHub · Jupyter · Vercel · Render · ReportLab · ffmpeg · yt-dlp",
+    details:[
+      "Development tools: VS Code, GitHub repositories and Pages deployment.",
+      "Deployment platforms: knowledge of Vercel and Render for hosting.",
+      "Reporting & media: ReportLab for PDF generation; ffmpeg & yt-dlp for media tasks."
     ]
   },
   {
-    id: "cicd",
-    title: "CI / CD",
-    short: "Automation for testing & deployment",
-    details: [
-      "Configured GitHub Actions workflows for Pages and deployments.",
-      "Prepared Docker-based CI pipelines and tested container builds.",
-      "Release automation and artifact handling for simple web projects."
-    ]
-  },
-  {
-    id: "ml",
-    title: "Machine Learning",
-    short: "Modeling & evaluation",
-    details: [
-      "Built and tuned neural networks (MLP) and baseline models.",
-      "Handled preprocessing of large session datasets (100k+ records).",
-      "Metrics & validation: R², train-test split, feature selection."
-    ]
-  },
-  {
-    id: "excel",
-    title: "Excel Analytics",
-    short: "Prototyping, reports & dashboards",
-    details: [
-      "Data cleaning, pivot tables, charts and ABC analysis in Excel.",
-      "Report generation and exporting findings to PDF for stakeholders.",
-      "Used Excel as a fast prototyping environment before dashboard builds."
-    ]
-  },
-  {
-    id: "webauto",
-    title: "Web Automation & Tools",
-    short: "Scraping, media tools & utilities",
-    details: [
-      "Web scraping with BeautifulSoup & requests for data collection.",
-      "yt-dlp and ffmpeg usage for media download and processing.",
-      "Proxy handling, rotating proxy pools, and automated batch downloads."
+    id:"automation-scraping",
+    title:"Web Automation & Scraping",
+    short:"BeautifulSoup · requests · yt-dlp · ffmpeg · proxies",
+    details:[
+      "Built scrapers using BeautifulSoup and requests with pagination and filtering.",
+      "Media automation using yt-dlp and ffmpeg (merge/convert operations).",
+      "Proxy scraping and rotation for large-scale automation tasks."
     ]
   }
 ];
 
-/* ========== projects (preferred order) ========== */
+/* ========== Certifications data ========== */
+const certs = [
+  {title:"Merit Cum Means Based CSR Scholarship, IIT Madras", meta:"IIT Madras — B.S. Program, 2025"},
+  {title:"Diploma Certificate in Programming", meta:"IIT Madras — B.S. Program, 2025"},
+  {title:"Foundation Level Certificate in Programming & Data Science", meta:"IIT Madras — 2024"},
+  {title:"Workshop: Implementing Machine Learning Techniques using Numpy", meta:"IIT Madras — Jan 6–9, 2025"},
+  {title:"Workshop: Dynamic Programming — Practical Examples", meta:"IIT Madras — Jan 20–22, 2025"},
+  {title:"Certificate on Blockchain & Its Application", meta:"NPTEL — 2025"},
+  {title:"Certificate on Basics of Python", meta:"Infosys — 2024"},
+  {title:"Python (Basics) Certificate", meta:"HackerRank — 2024"},
+  {title:"SQL (Basics) Certificate", meta:"HackerRank — 2024"},
+  {title:"ChatGPT For Everyone", meta:"GUVI — 2025"},
+  {title:"Introduction to the Emergency Response Framework (ERF)", meta:"WHO — 2024"},
+  {title:"Extracurricular: Best Athlete & Various Achievements", meta:"School — Sports & Cultural"}
+];
+
+/* ========== Projects data (complete bullets as provided) ========== */
 const projects = [
   {
-    id:"smart-pharmacy",
-    tag:"Analytics",
-    title:"Smart Pharmacy Management (Capstone)",
-    excerpt:"42-day sales & customer analysis, ABC inventory optimisation, and SMART recommendations with Excel/Flask dashboard prototype.",
+    id:"automation-agent",
+    tag:"Automation",
+    title:"Automation Agent – DataWorks Solutions",
+    excerpt:"Flask-based automation system executing many distinct tasks including scraping, log analysis, DB queries and data extraction.",
     bullets:[
-      "Collected and analyzed 42 days of sales data (111 SKUs, 1,122 visits).",
-      "Applied **ABC (Pareto) analysis**, time-series trends, and segmentation.",
-      "Proposed a Flask dashboard to automate weekly KPIs & reorder alerts.",
-      "Actionable SMART recommendations for inventory and loyalty programs."
+      "Developed a Flask-based automation system capable of executing 15+ distinct tasks, including web scraping, log analysis, database queries, and data extraction.",
+      "Implemented Celery + Redis for task orchestration, enabling parallel execution and reducing task completion time by 40%.",
+      "Designed modular pipelines with features like file formatting, indexing, embeddings, and API integration.",
+      "Containerized the application with Docker and integrated into a CI/CD pipeline for seamless deployment."
     ],
-    link:"https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth"
+    link:"https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions"
   },
   {
     id:"attendance-master",
     tag:"Edu-Tech",
     title:"Attendance Master & Extra-Curriculum Activity Manager",
-    excerpt:"Student attendance tracking & activity monitoring system with Celery-based daily reminders and automated monthly reports.",
+    excerpt:"Student attendance tracking and activity monitoring system with Celery-based reminders and monthly reports.",
     bullets:[
-      "Built a **student attendance & activity manager** to digitize academic records.",
-      "Automated **daily job reminders** and **monthly reports** using Celery — reduced manual reporting by **70%**.",
-      "Designed admin dashboards for attendance trends, participation logs, and exports.",
-      "Improved teacher efficiency in record maintenance and reporting."
+      "Built a student attendance tracking and activity monitoring system to digitize academic records.",
+      "Automated daily job reminders and monthly candidate reports using Celery jobs, reducing manual reporting effort by 70%.",
+      "Designed dashboards for administrators to view attendance trends, participation logs, and performance reports.",
+      "Improved teacher efficiency in record management and report generation."
     ],
     link:"https://github.com/23f2002668/Attendance-Master-Extra-Curriculum-Activity-Manager"
   },
   {
     id:"quizmaster",
     tag:"EdTech",
-    title:"QuizMaster V2",
-    excerpt:"Role-based quiz management platform using Flask + Vue.js with timed quizzes, results export and asynchronous notifications.",
+    title:"QuizMaster (Python + Flask + HTML + Vue.js)",
+    excerpt:"Quiz management platform supporting multiple-choice questions, timed tests, and real-time evaluation.",
     bullets:[
-      "Role-based access (Admin/User) with quiz creation, attempt, and scoring.",
-      "Integrated **Celery** for scheduled reminders and CSV exports.",
-      "Frontend built with **VueJS** and Bootstrap for responsive UI.",
-      "Deployed with SQLite for prototype and designed for production DBs."
+      "Created a quiz management platform supporting multiple-choice questions, timed tests, and real-time evaluation.",
+      "Integrated Flask backend + Vue.js frontend, providing a responsive UI and secure authentication.",
+      "Automated daily reminders for candidates and generated monthly performance reports using Celery jobs.",
+      "Used role-based access control for admins, teachers, and students, improving platform scalability."
     ],
     link:"https://github.com/23f2002668/QUIZMASTER"
-  },
-  {
-    id:"automation-agent",
-    tag:"Automation",
-    title:"Automation Agent — DataWorks Solutions",
-    excerpt:"Flask automation system with Celery workers and Docker for CI/CD, automating scraping, reports and batch tasks.",
-    bullets:[
-      "Designed an automation platform to run background tasks via Celery.",
-      "Containerized components with Docker and integrated CI workflows.",
-      "Automated batch reports, scrapers, and data pipelines (reduced manual effort).",
-      "Monitored jobs and optimized worker concurrency settings."
-    ],
-    link:"https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions"
-  },
-  {
-    id:"mlp-kaggle",
-    tag:"ML",
-    title:"MLP Project (Kaggle) — T22025",
-    excerpt:"Kaggle competition: MLP models predicting customer purchase value with engineered features and competitor R² scoring.",
-    bullets:[
-      "Preprocessed 100k+ session records: missing values, encoding, feature engineering.",
-      "Built baseline regressors and progressed to MLP for better fit.",
-      "Evaluated models using R² and cross-validation to avoid overfitting."
-    ],
-    link:"https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025"
   },
   {
     id:"az-household",
     tag:"Web App",
     title:"A-Z Household Service Web App",
-    excerpt:"Full-stack booking platform for household services with provider listings, booking engine and admin panel.",
+    excerpt:"Full-stack platform for booking household services with search, booking engine, and admin management.",
     bullets:[
-      "Implemented service listings, booking flow and admin management panels.",
-      "Backend with Flask and responsive frontend with Bootstrap.",
-      "Designed for future payment & provider integrations."
+      "Developed a full-stack application for on-demand household services such as cleaning, plumbing, and appliance repair.",
+      "Implemented features like service search, booking engine, and user management with a Flask backend and Vue.js frontend.",
+      "Designed a REST API to handle user authentication, service requests, and order history.",
+      "Optimized queries in the backend, improving API response time by 25%."
     ],
     link:"https://github.com/23f2002668/A-Z-HOUSEHOLD-SERVICE-WEB-APPLICATION"
   },
   {
     id:"online-downloader",
     tag:"Utilities",
-    title:"Online Video Downloader (yt-dlp wrapper)",
-    excerpt:"Python wrapper around yt-dlp with proxy, format selection and batch processing features.",
+    title:"Online Video Downloader (Python + yt-dlp)",
+    excerpt:"Automation script using yt-dlp to download videos in multiple formats with proxy support.",
     bullets:[
-      "Built command-line utilities for media download automation.",
-      "Added proxy support, format selection and automated batching.",
-      "Useful for building datasets and offline media management."
+      "Built a Python automation script using yt-dlp to download YouTube videos in multiple formats (MP4, MP3, custom resolution).",
+      "Integrated proxy support to bypass geo-restrictions and download videos blocked in certain countries.",
+      "Implemented features such as playlist downloads, batch processing, and resumable downloads for efficiency.",
+      "Added options for metadata extraction (title, description, upload date) and saving into CSV/JSON.",
+      "Reduced manual effort in downloading restricted educational/media content by 80%, creating a reusable automation utility."
     ],
     link:"https://github.com/23f2002668/Online_Video_Downloader"
   },
@@ -447,27 +418,60 @@ const projects = [
     id:"proxy-scraper",
     tag:"Scraping",
     title:"Proxy Scraper (BeautifulSoup)",
-    excerpt:"Scrapes public proxy lists and validates proxies to construct a rotating pool for automation jobs.",
+    excerpt:"Scrapes public proxy lists and validates proxies to build a rotating proxy pool.",
     bullets:[
-      "Scraped multiple sources, validated response times and anonymity.",
-      "Built rotate-and-validate pipeline for long-running scrapers."
+      "Developed a web scraping tool using BeautifulSoup to extract fresh HTTP/HTTPS proxy lists from public proxy provider websites.",
+      "Supported country-based filtering, allowing retrieval of proxies for specific regions (e.g., US, UK, India).",
+      "Implemented features for validating and testing proxies to ensure reliability before use.",
+      "Enabled exporting of working proxies into JSON/CSV files for seamless integration into automation and scraping projects.",
+      "Reduced dependency on paid proxy APIs by creating a self-maintained free proxy pool."
     ],
     link:"https://github.com/23f2002668/Proxy_Scraper_-BeautifulSoup"
   },
   {
     id:"image-downloader",
     tag:"Scraping",
-    title:"Image Downloader (BeautifulSoup)",
-    excerpt:"Bulk image scraper with filters for file type and resolution; supports proxies and batching.",
+    title:"Image Downloader (BeautifulSoup Web Scraper)",
+    excerpt:"Web scraper to download images in bulk with filters and metadata export.",
     bullets:[
-      "Efficient bulk downloads for dataset creation with filtering options.",
-      "Resumable downloads and proxy support for large runs."
+      "Developed a web scraping tool using Python + BeautifulSoup to automatically download images from given URLs and websites.",
+      "Implemented filters by file type (JPG, PNG, GIF) and custom naming conventions for organizing images.",
+      "Added functionality to download bulk images from galleries, blogs, and e-commerce product pages.",
+      "Exported metadata (image URL, filename, size) into CSV/JSON for easy tracking.",
+      "Reduced manual effort in downloading and categorizing images by 90%, enabling faster dataset creation for projects and ML tasks."
     ],
     link:"https://github.com/23f2002668/Image_Downloader_-BeautifulSoup_Web_Scraper"
+  },
+  {
+    id:"mlp-kaggle",
+    tag:"ML",
+    title:"ML & DS Project – MLP Project T22025 (Kaggle)",
+    excerpt:"ML competition predicting customer purchase value; preprocessing 100k+ sessions and modeling using MLP.",
+    bullets:[
+      "Participated in a Kaggle machine learning competition to predict customer purchase value based on multi-session user interactions.",
+      "Preprocessed a dataset of 100,000+ session records, handling missing values, categorical encoding, and feature engineering.",
+      "Implemented baseline ML models (Linear Regression, Decision Trees) and progressed to MLP (Multi-Layer Perceptron) for improved accuracy.",
+      "Submitted predictions using R² score evaluation metric, achieving competitive results among participants."
+    ],
+    link:"https://www.kaggle.com/code/shahzadamoon/23f2002668-notebook-t22025"
+  },
+  {
+    id:"smart-pharmacy",
+    tag:"Analytics",
+    title:"Smart Pharmacy Management: Leveraging Data for Efficiency & Growth",
+    excerpt:"Capstone: Excel-based sales & customer analysis with ABC inventory recommendations and Flask dashboard proposal.",
+    bullets:[
+      "Conducted a data-driven business analysis for Janta Medical Store to digitize pharmacy operations using Excel-based analytics.",
+      "Collected and analyzed 42 days of real-world sales and customer data (111 medicines, 10 categories).",
+      "Applied ABC (Pareto) analysis, time-series trends, and customer segmentation to identify key revenue drivers and optimize inventory.",
+      "Discovered that ~29% of products generated ~79% of revenue, leading to actionable SMART recommendations for restocking and loyalty programs.",
+      "Proposed implementation of a Flask/Excel dashboard to automate weekly KPIs, reorder alerts, and customer engagement tracking."
+    ],
+    link:"https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth"
   }
 ];
 
-/* ========== render skill cards ========== */
+/* ========== Render Skill Cards ========== */
 const skillsGrid = document.getElementById('skillsGrid');
 skills.forEach((s, idx) => {
   const card = document.createElement('div');
@@ -475,12 +479,21 @@ skills.forEach((s, idx) => {
   card.innerHTML = `
     <div class="skill-title">${s.title}</div>
     <div class="skill-desc">${s.short}</div>
-    <button data-skill="${idx}">View Details</button>
+    <button data-skill="${idx}" aria-label="View details for ${s.title}">View Details</button>
   `;
   skillsGrid.appendChild(card);
 });
 
-/* ========== render project cards ========== */
+/* ========== Render Certifications ========== */
+const certGrid = document.getElementById('certGrid');
+certs.forEach(c => {
+  const card = document.createElement('div');
+  card.className = 'cert-card';
+  card.innerHTML = `<div class="cert-title">${c.title}</div><div class="cert-meta">${c.meta}</div>`;
+  certGrid.appendChild(card);
+});
+
+/* ========== Render Project Cards ========== */
 const projectsGrid = document.getElementById('projectsGrid');
 projects.forEach((p, idx) => {
   const card = document.createElement('div');
@@ -489,22 +502,23 @@ projects.forEach((p, idx) => {
     <div class="project-tag">${p.tag}</div>
     <div class="project-title">${p.title}</div>
     <div class="project-excerpt">${p.excerpt}</div>
-    <button class="view-btn" data-project="${idx}">View Details</button>
+    <button class="view-btn" data-project="${idx}" aria-label="View details for ${p.title}">View Details</button>
   `;
   projectsGrid.appendChild(card);
 });
 
-/* ========== modal handling (shared) ========== */
+/* ========== Modal handling (shared) ========== */
 const modal = document.getElementById('modal');
 const modalPanel = document.getElementById('modalPanel');
 
-function openModal(title, lines, link){
-  modalPanel.innerHTML = `
-    <h3>${title}</h3>
-    <ul>${lines.map(l => `<li>${l}</li>`).join('')}</ul>
-    ${link ? `<div class="meta"><a href="${link}" target="_blank" style="color:#6dd3ff;font-weight:700">Open repository / notebook ↗</a></div>` : ''}
-    <div style="text-align:right"><button class="close" id="closeModal">Close</button></div>
-  `;
+function openModal(title, listLines, metaText = '', link=null){
+  modalPanel.innerHTML = `<h3>${title}</h3>`;
+  if(metaText) modalPanel.innerHTML += `<div class="meta">${metaText}</div>`;
+  if(Array.isArray(listLines) && listLines.length){
+    modalPanel.innerHTML += `<ul>${listLines.map(l => `<li>${l}</li>`).join('')}</ul>`;
+  }
+  if(link) modalPanel.innerHTML += `<div style="margin-top:10px"><a href="${link}" target="_blank" style="color:#6dd3ff;font-weight:700">Open repository / notebook ↗</a></div>`;
+  modalPanel.innerHTML += `<div style="text-align:right"><button class="close" id="closeModal">Close</button></div>`;
   modal.classList.add('show');
   modal.setAttribute('aria-hidden','false');
   document.getElementById('closeModal').focus?.();
@@ -515,35 +529,33 @@ function closeModal(){
   modal.setAttribute('aria-hidden','true');
 }
 
-/* Skill buttons */
+/* Skill view buttons */
 document.querySelectorAll('.skill-card button').forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
+  btn.addEventListener('click', ()=>{
     const idx = +btn.getAttribute('data-skill');
     const s = skills[idx];
-    const lines = s.details;
-    openModal(s.title, lines, null);
+    openModal(s.title, s.details, '', null);
   });
 });
 
-/* Project buttons */
+/* Project view buttons */
 document.querySelectorAll('.view-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const idx = +btn.getAttribute('data-project');
     const p = projects[idx];
-    openModal(p.title, p.bullets, p.link);
+    openModal(p.title, p.bullets, '', p.link);
   });
 });
 
-/* Close modal on background click or ESC */
-modal.addEventListener('click', (e)=>{
-  if(e.target === modal) closeModal();
-});
+/* Close modal on background click or ESC key */
+modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
 document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-/* small animation for avatar */
+/* Avatar subtle float */
 const profileImg = document.getElementById('profileImg');
 let a = 0;
-setInterval(()=>{ a=(a+0.5)%360; if(profileImg) profileImg.style.transform = `rotate(${Math.sin(a/20)}deg) scale(1.01)` }, 90);
+setInterval(()=>{ a=(a+0.6)%360; if(profileImg) profileImg.style.transform = `rotate(${Math.sin(a/20)}deg) scale(1.01)` }, 90);
+
 </script>
 </body>
 </html>
