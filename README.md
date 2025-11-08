@@ -1,5 +1,19 @@
-<h1 style="text-align: center; color: Maroon; font-family: Verdana;">This is my Portfolio Section</h1>
+<h1 style="text-align: center; color: Maroon; font-family: Verdana;">
+  This is my Portfolio Section
+</h1>
 
 <br><br>
 
-<button type="button" style="text-decoration: none; background-color: #ffa500;"><a href="" style="text-decoration: none; color: white; border: 1px solid white; border-radius: 3px;"> My Portfolio </button>
+<p style="text-align:center;">
+  <a href="https://23f2002668.github.io/"
+     style="text-decoration:none;
+            background-color:#ffa500;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            border:1px solid white;
+            font-family:Verdana;
+            font-weight:bold;">
+    My Portfolio
+  </a>
+</p>
