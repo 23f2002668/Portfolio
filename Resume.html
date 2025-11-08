@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzada Moon - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            min-height: 11in;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 0.6in;
+            font-size: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10px;
+            color: #555;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #bdc3c7;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .skill-category {
+            margin-bottom: 8px;
+        }
+
+        .skill-items {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .project-item {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 10px;
+            flex: 1;
+        }
+
+        .item-date {
+            color: #666;
+            font-style: italic;
+            font-size: 9.5px;
+            text-align: right;
+            min-width: 80px;
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievement-list li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 12px;
+            font-size: 10px;
+            text-align: justify;
+        }
+
+        .achievement-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 10px;
+        }
+
+        .education-date {
+            color: #666;
+            font-style: italic;
+            font-size: 9.5px;
+        }
+
+        .education-details {
+            font-size: 10px;
+            color: #555;
+        }
+
+        .certification-item {
+            margin-bottom: 6px;
+            padding-left: 12px;
+            position: relative;
+            font-size: 10px;
+        }
+
+        .certification-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 8px;
+        }
+
+        .certification-category {
+            margin-bottom: 8px;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #2980b9;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                background: white;
+                margin: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0.5in;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 20px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .certification-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">
+        📄 Print Resume
+    </button>
+
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>SHAHZADA MOON</h1>
+            <div class="contact-info">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+                <div class="contact-item">
+                  <a href="tel:+918126524809" style="text-decoration:none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;"><i class="bi bi-telephone-fill me-2"></i> +91 8126524809</a>
+                </div>
+
+                <div class="contact-item">
+                  <a href="mailto:23f2002668@ds.study.iitm.ac.in" style="text-decoration:none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;"><i class="bi bi-envelope-fill me-2"></i> 23f2002668@ds.study.iitm.ac.in</a>
+                </div>
+
+                <div class="contact-item" style="color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;">
+                  <i class="bi bi-github me-2"></i> 
+                  <a href="https://github.com/23f2002668" target="_blank" style="text-decoration:none; color: black;">github.com/23f2002668</a>
+                </div>
+
+                <div class="contact-item" style="color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;">
+                  <i class="bi bi-geo-alt-fill me-2"></i> Muradnagar, Ghaziabad, India
+                </div>
+                
+                <div class="contact-item" style="color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;">
+                  <i class="bi bi-globe me-2"></i>
+                  <a href="https://23f2002668.github.io/Portfolio/" target="_blank" style="text-decoration:none; color: black;">My Portfolio</a>
+                </div>
+                
+                <div class="contact-item" style="color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 1px 4px;">
+                  <i class="bi bi-globe me-2"></i>
+                  <a href="https://ds.study.iitm.ac.in/student/23F2002668" style="text-decoration: none; color: black;">My IITM Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <div class="section-title">SKILLS</div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-items">
+                        Python, Java, C, SQL, Shell Scripting, JavaScript, SED, AWK, Markdown, JSON, CSV
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-items">
+                        Git, GitHub, Linux System Administration, Jupyter, OpenRefine, API Integration, Docker, Podman, Redis, Celery
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-items">
+                        HTML, CSS, JavaScript, VueJS, FastAPI, Flask, REST API, macOS, Linux, Windows
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-items">
+                        Data Science, Machine Learning, Artificial Intelligence, LLM, Prompt Engineering, scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-items">
+                        Sheets, Charts, Colab, Docs, Forms, Slides, Calendar, Meet, Drive, Gmail, Word, Excel, PowerPoint
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-items">
+                        MySQL, SQLite, PostgreSQL, Data Structures, Algorithms, Blockchain Fundamentals
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="section">
+            <div class="section-title">EDUCATION</div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="education-title">Indian Institute of Technology Madras </div>
+                    <div class="education-date">2023 – Present</div>
+                </div>
+                <div class="education-details">B.S. Data Science (Currently in Diploma Level)</div>
+            </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="education-title">R.D. Engineering College, Ghaziabad</div>
+                    <div class="education-date">2023 – Present</div>
+                </div>
+                <div class="education-details">B.Tech Computer Science & Engineering, 3rd Year</div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <div class="section-title">PROJECTS</div>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Automation Agent – DataWorks Solutions (LLM + Flask)</div>
+                    <div class="item-date"><a href="https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions" style="text-decoration: none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 2.5px 4px;">View on GitHub</a></div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Developed Flask-based automation system executing 15+ distinct tasks including web scraping, log analysis, database queries, and data extraction</li>
+                    <li>Containerized application with Docker and integrated into CI/CD pipeline for seamless deployment</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Attendance Master & Extra-Curriculum Activity Manager (Flask + HTML + JS + MySQL)</div>
+                    <div class="item-date"><a href="https://github.com/23f2002668/Attendance-Master-Extra-Curriculum-Activity-Manager" style="text-decoration: none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 2.5px 4px;">View on GitHub</a></div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Student attendance tracking and activity monitoring system with attendance trends, participation logs and performance reports to digitize academic records</li>
+                    <li>Automated daily job reminders and monthly candidate reports using Celery jobs, reducing manual reporting effort by 70%</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">QuizMaster (Python + Flask + HTML + VueJS + MySQL)</div>
+                    <div class="item-date"><a href="https://github.com/23f2002668/QUIZMASTER" style="text-decoration: none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 2.5px 4px;">View on GitHub</a></div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Created quiz management platform supporting multiple-choice questions, timed tests, and real-time evaluation</li>
+                    <li>Automated daily reminders for candidates and generated monthly performance reports using Celery jobs</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">A-Z Household Service Web App (Flask + HTML)</div>
+                    <div class="item-date"><a href="https://github.com/23f2002668/A-Z-HOUSEHOLD-SERVICE-WEB-APPLICATION" style="text-decoration: none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 2.5px 4px;">View on GitHub</a></div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Developed full-stack application for on-demand household services with service search, booking engine, and user management</li>
+                    <li>Implemented Flask backend with Vue.js frontend for user authentication and service requests improving API response time by 25%</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Smart Pharmacy Management : Leveraging Data for Efficiency & Growth (Excel & Flask + HTML Dashboard)</div>
+                    <div class="item-date"><a href="https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth/" style="text-decoration: none; color: black; font-weight: 400; border: 1px solid black; border-radius: 3px; background-color: #c6e2ff; padding: 1px 4px 2.5px 4px;">View on GitHub</a></div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Conducted data-driven business analysis for pharmacy digitization using Excel-based analytics</li>
+                    <li>Analyzed 42 days of sales data (111 medicines, 10 categories) using ABC analysis and time-series trends</li>
+                    <li>Discovered 29% of products generated 79% of revenue, leading to actionable inventory optimization recommendations</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section">
+            <div class="section-title">CERTIFICATIONS & WORKSHOPS</div>
+            <div class="certification-grid">
+                <div class="certification-category">
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1upNIvN2M2PWbtppRg_RDbBN47Y0g2eaB/view?usp=sharing" style="text-decoration: none; color: #3498db;">Merit Cum Means Based CSR Scholarship</a></strong></i> - IIT Madras B.S. Program (2025)</div>
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/10NrHfDQLoJMuS1DKLD8e3WV9G7vV7jgl/view?usp=sharing" style="text-decoration: none; color: #3498db;">Diploma Certificate in Programming</a></strong></i> - IIT Madras B.S. Program (2025)</div>
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1r0nMBuLICBWmJRuST7hxSPPL0aEwbDJj/view?usp=sharing" style="text-decoration: none; color: #3498db;">Foundation Level Certificate</a></strong></i> - IIT Madras (2024)</div>
+                    
+                </div>
+                <div class="certification-category">
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1SE3gqYfxz3y37Cqk9yFx3q78cm835R94/view?usp=sharing" style="text-decoration: none; color: #3498db;">Machine Learning Workshop</a></strong></i> - IIT Madras (Jan 2025)</div>
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1mVpIUK25knR61e3AtlOa9o1_v7d9nW9U/view?usp=sharing" style="text-decoration: none; color: #3498db;">Dynamic Programming Workshop</a></strong></i> - IIT Madras (Jan 2025)</div>
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1zbTopR7QMFQNJTfasCrHzbr--_X1lyM8/view?usp=sharing" style="text-decoration: none; color: #3498db;">Blockchain & Its Application</a></strong></i> - NPTEL (2025)</div>
+                    <div class="certification-item"><i><strong><a href="https://drive.google.com/file/d/1u6EANi3YlKBPpy_9dhR9rPipBTk7AA5M/view?usp=sharing" style="text-decoration: none; color: #3498db;">Python Basics Certificate</a></strong></i> - Infosys (2024)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Professional resume with certifications loaded successfully');
+        });
+    </script>
+</body>
+</html>
