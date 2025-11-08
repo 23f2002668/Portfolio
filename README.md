@@ -1,19 +1,7 @@
-<h1 style="text-align: center; color: Maroon; font-family: Verdana;">
-  This is my Portfolio Section
-</h1>
+## 🧑‍💻 This is my Portfolio Section
 
-<br><br>
-
-<p style="text-align:center;">
-  <a href="https://23f2002668.github.io/"
-     style="text-decoration:none;
-            background-color:#ffa500;
-            color:white;
-            padding:8px 15px;
-            border-radius:5px;
-            border:1px solid white;
-            font-family:Verdana;
-            font-weight:bold;">
-    My Portfolio
+<p align="center">
+  <a href="https://23f2002668.github.io/" target="_blank">
+    <img src="https://img.shields.io/badge/View%20My%20Portfolio-%2300C853?style=for-the-badge&logo=githubpages&logoColor=white" alt="View My Portfolio">
   </a>
 </p>
