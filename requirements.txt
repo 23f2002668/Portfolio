@@ -1,7 +1,7 @@
 Flask==3.1.2
 Flask-Mail==0.9.1
 Flask-PyMongo==3.0.1
-Flask-Cors==4.0.5
+Flask-Cors==3.0.10
 passlib==1.8.4
 python-dotenv==1.0.0
 certifi==2025.9.0
