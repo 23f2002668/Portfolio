@@ -100,7 +100,7 @@ def SendEmailToUser(name, email, subject, message):
     msg = Message("Confirmation of Message Received",
                   sender=os.getenv("MAIL_DEFAULT_SENDER"),
                   recipients=[email])
-    msg.body = f"""Hello {user_name},
+    msg.body = f"""Hello {name},
         Myself Shahzada Moon and I hope this message finds you in good health and high spirits. 
 
         Thank you for reaching out to me via my portfolio. This email is to confirm that I have successfully received your message with the following details:
