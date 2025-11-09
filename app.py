@@ -30,6 +30,7 @@ mongo = PyMongo(app, tlsCAFile=certifi.where())
 contacts_collection = mongo.db.Contacts     # mongo.db.Contacts --> Here Contacts is the name filled in 'Contacts' field in Create Database
 
 
+"""
 # Email Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Mail Provider
 app.config['MAIL_PORT'] = 587
@@ -38,6 +39,7 @@ app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
 app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")  # Gmail App Password
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv("MAIL_DEFAULT_SENDER")
 mail = Mail(app)
+"""
 
 
 # ROUTES
@@ -67,10 +69,10 @@ def submit_contact():
         db_thread.start()
         
         # Send Email To User
-        SendEmailToUser(name, email, subject, message)
+        #SendEmailToUser(name, email, subject, message)
 
         # Send Email To Me
-        target=SendEmailToMe(name, email, subject, message)
+        #target=SendEmailToMe(name, email, subject, message)
 
         return jsonify({
             'message': 'Thank you for your message! Your response has been recorded successfully. I will get back to you soon.'
