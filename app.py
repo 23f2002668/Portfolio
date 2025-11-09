@@ -8,10 +8,7 @@ from urllib.parse import quote_plus
 import os, certifi, sqlite3, threading
 from dotenv import load_dotenv
 from datetime import datetime
-from google_auth_oauthlib.flow import Flow
-from googleapiclient.discovery import build
-from email.mime.text import MIMEText
-import base64, os, json
+
 
 # Load environment variables
 load_dotenv()
@@ -31,21 +28,6 @@ mongo = PyMongo(app, tlsCAFile=certifi.where())
 
 # Access the 'contacts' collection
 contacts_collection = mongo.db.Contacts     # mongo.db.Contacts --> Here Contacts is the name filled in 'Contacts' field in Create Database
-
-
-# Gmail API global OAuth credentials
-CREDENTIALS = {
-    "installed": {
-        "client_id": os.getenv("GOOGLE_CLIENT_ID"),
-        "project_id": os.getenv("GOOGLE_PROJECT_ID"),
-        "auth_uri": os.getenv("GOOGLE_AUTH_URI", "https://accounts.google.com/o/oauth2/auth"),
-        "token_uri": os.getenv("GOOGLE_TOKEN_URI", "https://oauth2.googleapis.com/token"),
-        "client_secret": os.getenv("GOOGLE_CLIENT_SECRET"),
-        "redirect_uris": ["http://localhost"]
-    }
-}
-
-SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 
 # Email Configuration
@@ -83,21 +65,12 @@ def submit_contact():
         # Insert Data Into DataBase
         db_thread = threading.Thread(target=InsertIntoDataBase, args=(name, email, subject, message))
         db_thread.start()
-
-        send_email(email, subject, message)
-
+        
         # Send Email To User
-        user_thread = threading.Thread(target=SendEmailToUser, args=(name, email, subject, message))
-        user_thread.start()
+        SendEmailToUser(name, email, subject, message)
 
         # Send Email To Me
-        my_thread = threading.Thread(target=SendEmailToMe, args=(name, email, subject, message))
-        my_thread.start()
-
-        # Join threads to ensure they finish before app shutdown
-        db_thread.join()
-        user_thread.join()
-        my_thread.join()
+        target=SendEmailToMe(name, email, subject, message)
 
         return jsonify({
             'message': 'Thank you for your message! Your response has been recorded successfully. I will get back to you soon.'
@@ -157,30 +130,6 @@ def SendEmailToMe(user_name, user_email, subject, message):
     mail.send(msg)
     print("Mail sent successfully !")
     return "Mail Sent Successfully !"
-
-
-def send_email(to_email, subject, message):
-    try:
-        flow = Flow.from_client_config(CREDENTIALS, SCOPES)
-        creds = flow.run_local_server(port=0)  # Authorize once locally
-        service = build('gmail', 'v1', credentials=creds)
-
-        message = MIMEText(message_text)
-        message['to'] = to_email
-        message['subject'] = subject
-        raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
-
-        sent = service.users().messages().send(
-            userId="me",
-            body={'raw': raw}
-        ).execute()
-
-        print(f"Email sent successfully! Message ID: {sent['id']}")
-        return True
-        
-    except Exception as e:
-        print(f"Error sending email: {e}")
-        return False
 
 
 
