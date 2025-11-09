@@ -58,6 +58,7 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv("MAIL_DEFAULT_SENDER")
 mail = Mail(app)
 
 
+# ROUTES
 @app.route('/')
 def index():
     return render_template('index.html')
