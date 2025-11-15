@@ -75,7 +75,7 @@ def submit_contact():
         #target=SendEmailToMe(name, email, subject, message)
 
         return jsonify({
-            'message': 'Thank you for your message! Your response has been recorded successfully. I will get back to you soon.'
+            'message': 'Thank you for your message! \nYour response has been recorded successfully. \nI will get back to you soon.'
         })
 
     except Exception as e:
