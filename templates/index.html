@@ -1215,7 +1215,7 @@
 
                 let result = await response.json();
                 console.log("Server Response: " + result);
-                alert("Thankyou for contacting me. \n\nYour response has been successfully captured. \n\nI will catch you as soon as possible. \n\nServer Response: " + result);
+                alert(result.value);
                 window.location.reload();
             }
 
