@@ -467,6 +467,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
@@ -496,6 +497,13 @@
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
+        }
+
+        .form-error {
+            color: #f44336;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: block;
         }
 
         /* Footer */
@@ -1129,21 +1137,25 @@
                       <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
+                        <span id="nameError" class="form-error"></span>
                       </div>
 
                       <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" class="form-control" required>
+                        <span id="emailError" class="form-error"></span>
                       </div>
 
                       <div class="form-group">
                         <label for="subject">Subject</label>
                         <input type="text" id="subject" name="subject" class="form-control" required>
+                        <span id="subjectError" class="form-error"></span>
                       </div>
 
                       <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" class="form-control" required></textarea>
+                        <span id="messageError" class="form-error"></span>
                       </div>
 
                       <button type="button" class="btn" id="submitBtn" onclick="submitForm()">Send Message</button>
@@ -1183,8 +1195,6 @@
         </div>
     </footer>
 
-    
-    // Script
     <script>
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -1235,10 +1245,13 @@
         // Check on scroll
         window.addEventListener('scroll', fadeInOnScroll);
 
-
+        // Form Validation
         function validateForm() {
             let isValid = true;
             const form = document.getElementById('contactForm');
+
+            // Clear previous errors
+            clearErrors();
 
             // Name validation
             const name = form.name.value.trim();
@@ -1275,9 +1288,6 @@
         function showError(elementId, message) {
             const errorElement = document.getElementById(elementId);
             errorElement.textContent = message;
-            errorElement.style.color = '#f44336';
-            errorElement.style.fontSize = '0.8rem';
-            errorElement.style.marginTop = '5px';
         }
 
         function clearErrors() {
@@ -1329,10 +1339,11 @@
                         showError(errorId, 'Message must be at least 10 characters long');
                     }
                     break;
+            }
+        }
 
         // Form Submission
         async function submitForm() {
-
             // Validate form before submission
             if (!validateForm()) {
                 alert("Please fix the errors in the form before submitting.");
@@ -1352,6 +1363,10 @@
             };
 
             try {
+                // Show loading state
+                document.getElementById("formLoading").style.display = "block";
+                document.getElementById("submitBtn").disabled = true;
+
                 let response = await fetch("https://portfolio-k9xk.onrender.com/submit_contact", {
                     method: "POST",
                     headers: {
@@ -1362,7 +1377,7 @@
 
                 if (!response.ok) {
                     alert("Oops! Something went wrong. Please try again.");
-                    throw new Error(`Message: An HTTP error is occured. \nStatus: ${response.status}`)
+                    throw new Error(`Message: An HTTP error is occured. \nStatus: ${response.status}`);
                 }
 
                 let result = await response.json();
@@ -1370,11 +1385,14 @@
                 alert(result.value);
                 window.location.reload();
             }
-
             catch (error) {
                 console.log("Message: An error is occured. \nError: " + error);
                 alert("Oops! Something went wrong. Your response has not been recorded. Please try again later.");
             }
+            finally {
+                // Hide loading state
+                document.getElementById("formLoading").style.display = "none";
+                document.getElementById("submitBtn").disabled = false;
             }
         }
     </script>
