@@ -1332,6 +1332,13 @@
 
         // Form Submission
         async function submitForm() {
+
+            // Validate form before submission
+            if (!validateForm()) {
+                alert("Please fix the errors in the form before submitting.");
+                return;
+            }
+            
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
             let subject = document.getElementById("subject").value;
