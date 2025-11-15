@@ -1183,50 +1183,8 @@
         </div>
     </footer>
 
-    <script>
-
-        // Form Submission
-        async function submitForm() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let subject = document.getElementById("subject").value;
-            let message = document.getElementById("message").value;
-
-            let data = {
-                name: name,
-                email: email,
-                subject: subject,
-                message: message
-            };
-
-            try {
-                let response = await fetch("https://portfolio-k9xk.onrender.com/submit_contact", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (!response.ok) {
-                    alert("Oops! Something went wrong. Please try again.");
-                    throw new Error(`Message: An HTTP error is occured. \nStatus: ${response.status}`)
-                }
-
-                let result = await response.json();
-                console.log("Server Response: " + result);
-                alert(result.value);
-                window.location.reload();
-            }
-
-            catch (error) {
-                console.log("Message: An error is occured. \nError: " + error);
-                alert("Oops! Something went wrong. Your response has not been recorded. Please try again later.");
-            }
-        }
-
-    </script>
-
+    
+    // Script
     <script>
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -1410,7 +1368,7 @@
                 console.log("Message: An error is occured. \nError: " + error);
                 alert("Oops! Something went wrong. Your response has not been recorded. Please try again later.");
             }
-            }*/
+            }
         }
     </script>
 </body>
