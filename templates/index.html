@@ -136,7 +136,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            border: none;
+            border: 2px solid white;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
         }
@@ -290,7 +290,7 @@
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 60px;
         }
 
         .skill-category {
@@ -298,7 +298,7 @@
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.03);
+            border: 1px solid white;/*rgba(255,255,255,0.03);*/
             transition: var(--transition);
         }
 
@@ -345,7 +345,7 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            gap: 60px;
         }
 
         .project-card {
@@ -353,7 +353,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.03);
+            border: 1px solid white;/*rgba(255,255,255,0.03);*/
             transition: var(--transition);
         }
 
@@ -392,11 +392,30 @@
             border: 1px solid rgba(255,255,255,0.03);
         }
 
+        .project_btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: var(--transition);
+            border: 2px solid white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+        }
+
+        .project_btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 122, 0, 0.4);
+        }
+
         /* Certifications Section */
         .certifications-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 60px;
         }
 
         .cert-card {
@@ -404,7 +423,7 @@
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.03);
+            border: 1px solid white; /*rgba(255,255,255,0.03);*/
             transition: var(--transition);
         }
 
@@ -421,6 +440,25 @@
         .cert-card p {
             color: var(--gray);
             margin-bottom: 15px;
+        }
+
+        .certificate_btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: var(--transition);
+            border: 2px solid white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+        }
+
+        .certificate_btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 122, 0, 0.4);
         }
 
         /* Contact Section */
@@ -467,7 +505,6 @@
 
         .form-group {
             margin-bottom: 20px;
-            position: relative;
         }
 
         .form-group label {
@@ -499,18 +536,11 @@
             resize: vertical;
         }
 
-        .form-error {
-            color: #f44336;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: block;
-        }
-
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 50px 0 20px;
+            padding: 25px 0 10px;
             border-top: 1px solid rgba(255,255,255,0.03);
         }
 
@@ -558,7 +588,7 @@
             color: #8fd6ff;
             font-weight: 700;
         }
-
+        
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -587,26 +617,26 @@
             .about-content {
                 flex-direction: column;
             }
-
+            
             .contact-container {
                 flex-direction: column;
             }
-
+            
             .education-timeline::before {
                 left: 30px;
             }
-
+            
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 0;
             }
-
+            
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 left: 0;
             }
-
+            
             .timeline-item:nth-child(odd)::before,
             .timeline-item:nth-child(even)::before {
                 left: 20px;
@@ -627,27 +657,27 @@
                 padding-top: 50px;
                 transition: var(--transition);
             }
-
+            
             .nav-links.active {
                 left: 0;
             }
-
+            
             .nav-links li {
                 margin: 15px 0;
             }
-
+            
             .hamburger {
                 display: block;
             }
-
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-
+            
             .section-title h2 {
                 font-size: 2rem;
             }
-
+            
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
@@ -659,7 +689,7 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
-
+            
             .projects-grid,
             .skills-container,
             .certifications-container {
@@ -682,6 +712,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="SHAHZADA_MOON_RESUME.html" target="_blank">Resume</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -710,8 +741,8 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm Shahzada Moon, a motivated and detail-oriented aspiring DevOps and Software Engineer with hands-on experience in scripting, automation, web scraping, and full-stack development. I have a strong foundation in system administration, database management, and modern development tools.</p>
-                    <p>Currently advancing my expertise in <strong>Linux System Administration</strong> and <strong>Kotlin</strong> for scalable applications.</p>
+                    <p>Hi, I’m Shahzada Moon — a tech enthusiast passionate about coding, automation, AI innovation, and web scraping. I design intelligent applications using Python, Flask, VueJS, and Machine Learning. With a strong foundation in data science and software engineering, I aim to craft seamless, scalable, and impactful digital experiences that connect technology with purpose.</p>
+                    <p>Currently advancing my expertise in <strong>Linux System Administration</strong> for scalable applications.</p>
                     <div class="profile-links">
                         <a href="https://ds.study.iitm.ac.in/student/23F2002668" class="profile-link" target="_blank">
                             <i class="fas fa-graduation-cap"></i> IITM Profile
@@ -734,24 +765,23 @@
             <div class="education-timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Indian Institute Of Technology Madras</h3>
-                        <p><strong>Course:</strong> B. S. Data Science</p>
-                        <p><strong>Year:</strong> 2023 - Present (Diploma Level - 2nd Year)</p>
+                        <h3>Indian Institute Of Technology Madras, Chennai, Tamil Nadu, India</h3>
+                        <p><strong>Course:</strong> Bachelor of Science (B. S.) in Data Science</p>
+                        <p><strong>Year:</strong> May 2023 – Present (Diploma Level)</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>R.D. Engineering College Dubai, Ghaziabad</h3>
-                        <p><strong>Course:</strong> B. Tech (Computer Science & Engineering)</p>
-                        <p><strong>Year:</strong> 2023 - Present (3rd Year)</p>
+                        <h3>Dr. A. P. J. Abdul Kalam Technical University, Lucknow, Uttar Pradesh, India</h3>
+                        <p><strong>Course:</strong> Bachelor of Technology (Computer Science & Engineering)</p>
+                        <p><strong>Year:</strong> Sep 2023 – Present (3rd Year)</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>World Quant University, New Orleans, LA</h3>
-                        <p><strong>Course 1:</strong> Applied Data Science Lab</p>
-                        <p><strong>Course 2:</strong> Applied AI Lab: Deep Learning for Computer Vision</p>
-                        <p><strong>Year:</strong> 2024 - Present</p>
+                        <h3>Indian Institute of Technology Madras, Chennai, Tamil Nadu, India</h3>
+                        <p><strong>Course:</strong>Diploma in Programming</p>
+                        <p><strong>Year:</strong>May 2023 – Sep 2025</p>
                     </div>
                 </div>
             </div>
@@ -765,137 +795,119 @@
                 <h2>Skills</h2>
             </div>
             <div class="skills-container">
-                <div class="skill-category">
-                    <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MacOS</span>
-                        <span class="skill-tag">LINUX</span>
-                        <span class="skill-tag">Windows</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Github</span>
-                        <span class="skill-tag">Linux System Administration</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">OpenRefine</span>
-                        <span class="skill-tag">API Integration</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Podman</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Celery</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Shell Scripting</span>
-                        <span class="skill-tag">SED</span>
-                        <span class="skill-tag">AWK</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Markdown</span>
-                        <span class="skill-tag">JSON</span>
-                        <span class="skill-tag">CSV</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-globe"></i> Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">VueJS</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">FLASK</span>
-                        <span class="skill-tag">RESTAPI</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Data Science & AI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Science</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Artificial Intelligence</span>
-                        <span class="skill-tag">LLM</span>
-                        <span class="skill-tag">AI Prompt Engineering</span>
-                        <span class="skill-tag">Scikit Learn</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Numpy</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Database & SQL</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MYSQL</span>
-                        <span class="skill-tag">SQLITE</span>
-                        <span class="skill-tag">POSTGRESQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-file-alt"></i> Google Workspace & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Sheets</span>
-                        <span class="skill-tag">Charts</span>
-                        <span class="skill-tag">Colaboratory</span>
-                        <span class="skill-tag">Docs</span>
-                        <span class="skill-tag">Forms</span>
-                        <span class="skill-tag">Slides</span>
-                        <span class="skill-tag">Calendar</span>
-                        <span class="skill-tag">Meet</span>
-                        <span class="skill-tag">Drive</span>
-                        <span class="skill-tag">Gmail</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-file-excel"></i> Microsoft Office</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Word</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">PowerPoint</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-sitemap"></i> Data Structures & Algorithms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Core algorithms & optimization</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-link"></i> Blockchain</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Fundamentals & applications</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">Vercel</span>
-                        <span class="skill-tag">Render</span>
-                        <span class="skill-tag">ReportLab</span>
-                        <span class="skill-tag">ffmpeg</span>
-                        <span class="skill-tag">yt-dlp</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> Web Automation & Scraping</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">BeautifulSoup</span>
-                        <span class="skill-tag">requests</span>
-                        <span class="skill-tag">yt-dlp</span>
-                        <span class="skill-tag">ffmpeg</span>
-                        <span class="skill-tag">proxies</span>
-                    </div>
-                </div>
+                 <div class="skill-category">
+                     <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                     <div class="skill-tags">
+                           <span class="skill-tag">Python</span>
+                           <span class="skill-tag">Java</span>
+                           <span class="skill-tag">C</span>
+                           <span class="skill-tag">C++</span>
+                           <span class="skill-tag">SQL</span>
+                           <span class="skill-tag">Shell Scripting</span>
+                           <span class="skill-tag">JavaScript</span>
+                           <span class="skill-tag">TypeScript</span>
+                           <span class="skill-tag">SED</span>
+                           <span class="skill-tag">AWK</span>
+                           <span class="skill-tag">Markdown</span>
+                           <span class="skill-tag">JSON</span>
+                           <span class="skill-tag">CSV</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-tools"></i> Software Development & Tools</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">Git</span>
+                           <span class="skill-tag">GitHub</span>
+                           <span class="skill-tag">Jupyter</span>
+                           <span class="skill-tag">OpenRefine</span>
+                           <span class="skill-tag">API Integration</span>
+                           <span class="skill-tag">Docker</span>
+                           <span class="skill-tag">Podman</span>
+                           <span class="skill-tag">Automation</span>
+                           <span class="skill-tag">Web Scraping</span>
+                           <span class="skill-tag">BeautifulSoup</span>
+                           <span class="skill-tag">PlayWright</span>
+                           <span class="skill-tag">Selenium</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-globe"></i> Full-Stack Web Development</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">HTML</span>
+                           <span class="skill-tag">CSS</span>
+                           <span class="skill-tag">VueJS</span>
+                           <span class="skill-tag">Flask</span>
+                           <span class="skill-tag">SpringBoot</span>
+                           <span class="skill-tag">FastAPI</span>
+                           <span class="skill-tag">REST API</span>
+                           <span class="skill-tag">Redis</span>
+                           <span class="skill-tag">Celery</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">macOS</span>
+                           <span class="skill-tag">Linux</span>
+                           <span class="skill-tag">Windows</span>
+                           <span class="skill-tag">Linux System Administration</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-brain"></i> Data Science & Machine Learning</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">Data Science (DS)</span>
+                           <span class="skill-tag">Machine Learning (ML)</span>
+                           <span class="skill-tag">Artificial Intelligence (AI)</span>
+                           <span class="skill-tag">Large Language Models (LLM)</span>
+                           <span class="skill-tag">Prompt Engineering</span>
+                           <span class="skill-tag">scikit-learn</span>
+                           <span class="skill-tag">Pandas</span>
+                           <span class="skill-tag">NumPy</span>
+                           <span class="skill-tag">Matplotlib</span>
+                           <span class="skill-tag">Seaborn</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-briefcase"></i> Office & Productivity Tools</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">Microsoft Word</span>
+                           <span class="skill-tag">Microsoft Excel</span>
+                           <span class="skill-tag">Microsoft PowerPoint</span>
+                           <span class="skill-tag">Google Colaboratory</span>
+                           <span class="skill-tag">Google Sheets</span>
+                           <span class="skill-tag">Google Docs</span>
+                           <span class="skill-tag">Google Forms</span>
+                           <span class="skill-tag">Google Slides</span>
+                           <span class="skill-tag">Google Workspace</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-database"></i> Databases & Storage</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">MySQL</span>
+                           <span class="skill-tag">SQLite</span>
+                           <span class="skill-tag">PostgreSQL</span>
+                           <span class="skill-tag">MongoDB</span>
+                      </div>
+                 </div>
+
+                 <div class="skill-category">
+                      <h3><i class="fas fa-microchip"></i> Computer Science Foundations</h3>
+                      <div class="skill-tags">
+                           <span class="skill-tag">Data Structures</span>
+                           <span class="skill-tag">Algorithms</span>
+                           <span class="skill-tag">Object-Oriented Programming (OOPs)</span>
+                           <span class="skill-tag">Networking</span>
+                           <span class="skill-tag">Blockchain Fundamentals</span>
+                      </div>
+                 </div>
             </div>
         </div>
     </section>
@@ -909,6 +921,33 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-content">
+                        <h3>Smart Pharmacy Management</h3>
+                        <p>Conducted data-driven business analysis to digitize pharmacy operations using Excel-based analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">ABC Analysis</span>
+                        </div>
+                        <p><strong>Discovery:</strong> 29% of products generated 79% of revenue.</p>
+                        <a href="https://github.com/23f2002668/Smart-Pharmacy-Management-Leveraging-Data-For-Efficiency-And-Growth" target="_blank" class="project_btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Engage2Value : From Clicks to Conversions (A Machine Learning Project)</h3>
+                        <p>ML competition predicting customer purchase value; preprocessing 100k+ sessions and modeling using MLP.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">MLP</span>
+                            <span class="tech-tag">Kaggle</span>
+                        </div>
+                        <p><strong>Features:</strong> Feature engineering, baseline models, MLP implementation.</p>
+                        <a href="https://github.com/23f2002668/Engage2Value-From-Clicks-to-Conversions" target="_blank" class="project_btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
                         <h3>Automation Agent – DataWorks Solutions</h3>
                         <p>Developed a Flask-based automation system capable of executing 15+ distinct tasks, including web scraping, log analysis, database queries, and data extraction.</p>
                         <div class="project-tech">
@@ -919,6 +958,7 @@
                             <span class="tech-tag">CI/CD</span>
                         </div>
                         <p><strong>Achievement:</strong> Reduced task completion time by 40% through parallel execution.</p>
+                        <a href="https://github.com/23f2002668/Automation-Agent-DataWorks-Solutions" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -931,6 +971,7 @@
                             <span class="tech-tag">Automation</span>
                         </div>
                         <p><strong>Achievement:</strong> Reduced manual reporting effort by 70%.</p>
+                        <a href="https://github.com/23f2002668/Attendance-Master-Extra-Curriculum-Activity-Manager" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -944,6 +985,7 @@
                             <span class="tech-tag">Vue.js</span>
                         </div>
                         <p><strong>Features:</strong> Role-based access control, automated reminders, performance reports.</p>
+                        <a href="https://github.com/23f2002668/QUIZMASTER" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -956,6 +998,7 @@
                             <span class="tech-tag">REST API</span>
                         </div>
                         <p><strong>Achievement:</strong> Improved API response time by 25%.</p>
+                        <a href="https://github.com/23f2002668/A-Z-HOUSEHOLD-SERVICE-WEB-APPLICATION" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -968,18 +1011,7 @@
                             <span class="tech-tag">Automation</span>
                         </div>
                         <p><strong>Achievement:</strong> Reduced manual effort by 80%.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Smart Pharmacy Management</h3>
-                        <p>Conducted data-driven business analysis to digitize pharmacy operations using Excel-based analytics.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Data Analysis</span>
-                            <span class="tech-tag">ABC Analysis</span>
-                        </div>
-                        <p><strong>Discovery:</strong> 29% of products generated 79% of revenue.</p>
+                        <a href="https://github.com/23f2002668/Online_Video_Downloader" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -992,6 +1024,7 @@
                             <span class="tech-tag">Web Scraping</span>
                         </div>
                         <p><strong>Features:</strong> Country-based filtering, proxy validation, JSON/CSV export.</p>
+                        <a href="https://github.com/23f2002668/Proxy_Scraper_-BeautifulSoup" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -1004,19 +1037,7 @@
                             <span class="tech-tag">Web Scraping</span>
                         </div>
                         <p><strong>Achievement:</strong> Reduced manual effort by 90% for image dataset creation.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>ML & DS Project – MLP Project T22025 (Kaggle)</h3>
-                        <p>ML competition predicting customer purchase value; preprocessing 100k+ sessions and modeling using MLP.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">MLP</span>
-                            <span class="tech-tag">Kaggle</span>
-                        </div>
-                        <p><strong>Features:</strong> Feature engineering, baseline models, MLP implementation.</p>
+                        <a href="https://github.com/23f2002668/Image_Downloader_-BeautifulSoup_Web_Scraper" target="_blank" class="project_btn">View Project</a>
                     </div>
                 </div>
             </div>
@@ -1032,73 +1053,89 @@
             <div class="certifications-container">
                 <div class="cert-card">
                     <h3>Merit Cum Means Based CSR Scholarship</h3>
-                    <p><strong>Issuer:</strong> IIT Madras B.S. Program</p>
+                    <p><strong>Issuer:</strong> IIT Madras</p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/1upNIvN2M2PWbtppRg_RDbBN47Y0g2eaB/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Diploma Certificate in Programming</h3>
-                    <p><strong>Issuer:</strong> IIT Madras B.S. Program</p>
+                    <p><strong>Issuer:</strong> IIT Madras</p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/10NrHfDQLoJMuS1DKLD8e3WV9G7vV7jgl/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Foundation Level Certificate</h3>
-                    <p><strong>Issuer:</strong> IIT Madras B.S. Program</p>
+                    <p><strong>Issuer:</strong> IIT Madras</p>
                     <p><strong>Year:</strong> 2024</p>
-                </div>
-                <div class="cert-card">
-                    <h3>Workshop: Machine Learning with Numpy</h3>
-                    <p><strong>Issuer:</strong> IIT Madras B.S. Program</p>
-                    <p><strong>Year:</strong> Jan 6-9, 2025</p>
-                </div>
-                <div class="cert-card">
-                    <h3>Workshop: Dynamic Programming</h3>
-                    <p><strong>Issuer:</strong> IIT Madras B.S. Program</p>
-                    <p><strong>Year:</strong> Jan 20-22, 2025</p>
+                    <a href="https://drive.google.com/file/d/1r0nMBuLICBWmJRuST7hxSPPL0aEwbDJj/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Blockchain & Its Application</h3>
                     <p><strong>Issuer:</strong> NPTEL</p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/1zbTopR7QMFQNJTfasCrHzbr--_X1lyM8/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
+                
                 <div class="cert-card">
                     <h3>Data Analytics Job Simulation</h3>
-                    <p><strong>Issuer:</strong> Deloitte</p>
+                    <p><strong>Issuer:</strong> Deloitte </p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/1j8xsvO-bO8tHCaTVNhmiN0VmUITTsHfl/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
+                
                 <div class="cert-card">
                     <h3>Cyber Job Simulation</h3>
-                    <p><strong>Issuer:</strong> Deloitte</p>
+                    <p><strong>Issuer:</strong> Deloitte </p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/1n8AyxwA_20mpJrCm0tRpZft8NirvudTb/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <h3>Workshop: Machine Learning with Numpy</h3>
+                    <p><strong>Issuer:</strong> IIT Madras </p>
+                    <p><strong>Year:</strong> Jan 6-9, 2025</p>
+                    <a href="https://drive.google.com/file/d/1SE3gqYfxz3y37Cqk9yFx3q78cm835R94/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
+                </div>
+                <div class="cert-card">
+                    <h3>Workshop: Dynamic Programming</h3>
+                    <p><strong>Issuer:</strong> IIT Madras</p>
+                    <p><strong>Year:</strong> Jan 20-22, 2025</p>
+                    <a href="https://drive.google.com/file/d/1mVpIUK25knR61e3AtlOa9o1_v7d9nW9U/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Certificate on Basics of Python</h3>
                     <p><strong>Issuer:</strong> Infosys</p>
                     <p><strong>Year:</strong> 2024</p>
+                    <a href="https://drive.google.com/file/d/1u6EANi3YlKBPpy_9dhR9rPipBTk7AA5M/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Python (Basics) Certificate</h3>
                     <p><strong>Issuer:</strong> HackerRank</p>
                     <p><strong>Year:</strong> 2024</p>
+                    <a href="https://drive.google.com/file/d/1wpd-oSNbtiQaEs_FA1hxL0oMMybtXJX5/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>SQL (Basics) Certificate</h3>
                     <p><strong>Issuer:</strong> HackerRank</p>
                     <p><strong>Year:</strong> 2024</p>
+                    <a href="https://drive.google.com/file/d/12k8t2rfl7WMh39Jjx1z-pnnBlN_uRbK-/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>ChatGPT For Everyone</h3>
                     <p><strong>Issuer:</strong> GUVI</p>
                     <p><strong>Year:</strong> 2025</p>
+                    <a href="https://drive.google.com/file/d/1Ytg5Rp6GNXLRRkIhSrX_BQQDBom7u1re/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Introduction to the Emergency Response Framework (ERF)</h3>
                     <p><strong>Issuer:</strong> World Health Organization</p>
                     <p><strong>Year:</strong> 2024</p>
+                    <a href="https://drive.google.com/file/d/1ksk15lCX4SAJZlhryCpyu4dMlFRTi6fa/view?usp=sharing" target="_blank" class="certificate_btn">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <h3>Best Athlete & Various Achievements</h3>
                     <p><strong>Issuer:</strong> School</p>
                     <p><strong>Year:</strong> Various</p>
+                    <a href="" class="certificate_btn" target="_blank">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -1138,41 +1175,29 @@
                         </div>
                         <div class="contact-details">
                             <h4>Address</h4>
-                            <p>227, Gurudwara Market, Ordnance Factory Road,<br>Mohammadpur Dwedha, Muradnagar,<br>Ghaziabad, U.P., India</p>
+                            <p>227, Gurudwara Market, Ordnance Factory Road,<br>Mohammadpur Dwedha, Muradnagar,<br>Ghaziabad, Uttar Pradesh, India</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
-                      <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                        <span id="nameError" class="form-error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                        <span id="emailError" class="form-error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                        <span id="subjectError" class="form-error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                        <span id="messageError" class="form-error"></span>
-                      </div>
-
-                      <button type="button" class="btn" id="submitBtn" onclick="submitForm()">Send Message</button>
-
-                      <!-- Optional elements for your JS -->
-                      <div id="formMessage" class="form-message" style="display:none;"></div>
-                      <div id="formLoading" style="display:none;">Submitting...</div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
